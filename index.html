@@ -102,13 +102,14 @@
    function getContentHeight(){
         if($(window).height() > 700)
         {
+            $(".down").css("bottom", -0.25*getContentHeight());
             return $(window).height();
         } else {
             return 700;
         }
     }
     $(".fullHeight").css("height", getContentHeight());
-    $(".down").css("bottom", -0.25*getContentHeight());
+
 </script>
 
 </html>
