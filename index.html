@@ -21,9 +21,9 @@
         <h3 class="fadeIn two">Designer.    Dreamer.    Innovator.</h3>
         <br>
     <br>
-    
+    <div class="partPad" style="padding-top: 75px">
     <a href="#about" class="smoothScroll"><button type="button" class="btn btn-primary fadeIn three down" style="position: relative; align = center;  bottom: 50px; border-radius: 50%;" style:hover="background-color:#141f33;  border: 0px; border-radius: 50%;"><img src="img/Down.png"></button></a>
-    
+        </div>
     </div>
     
     
@@ -102,13 +102,13 @@
    function getContentHeight(){
         if($(window).height() > 700)
         {
-            $(".down").css("bottom", -0.25*getContentHeight());
             return $(window).height();
         } else {
             return 700;
         }
     }
     $(".fullHeight").css("height", getContentHeight());
+    $(".partPad").css("padding-top", getContentHeight()/3);
 
 </script>
 
