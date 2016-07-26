@@ -67,13 +67,6 @@
     -o-animation-delay: 1.8s;
     animation-delay: 1.8s;
 }
-.fadeIn.five {
-    -webkit-animation-delay: 2.1s;
-    -ms-animation-delay: 2.1s;
-    -moz-animation-delay: 2.1s;
-    -o-animation-delay: 2.1s;
-    animation-delay: 2.1s;
-}
 h1{
     color: white;
 }

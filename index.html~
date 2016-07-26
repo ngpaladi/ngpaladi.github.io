@@ -77,8 +77,8 @@
 
     <h1 style="font-size: 64px;">Portfolio</h1>
 </br>
-    <div class="col-md-2"></div>
-    <div class="col-md-4">
+    <div class="col-md-1"></div>
+    <div class="col-md-3">
         <h2>Kaldersvell OS</h2>
 
         <img src="http://www.kaldersvell.org/img/logo.png" height="200" style="padding: 20px"/>
@@ -89,27 +89,35 @@
 
     </div>
     <div class="col-md-4">
-        <h2>Academy Math Game</h2>
-
-        <img src="./img/ingame.jpg" height="200" style="padding: 20px"/>
-
-	<p> I led the Academy Math Game project for the 2015-2016 and 2016-2017 school years, as Co-President and President respectively. The project seeks to sharpen math skills through an intuitive computer game. </p>
-<br/>
-	<a href="http://www.mcalearning.org/" class="btn btn-primary">Learn More</a>
-
+        <h3 style="font-size: 45px;">Hardware</h3>
+        <ul>
+        <li>&#160;</li>
+        <li>MPASM Assembly</li>
+        <li>DC Circuitry</li>
+        <li>Digital Logic</li>
+        <li>&#160;</li>
+        </ul>
     </div>
-    <div class="col-md-4">
-<!--        <h2>All In </h2>
-
-        <img src="http://www.kaldersvell.org/img/logo.png" height="200" style="padding: 20px"/>
-
-	<p> I created the All In newsfeed app with a team of three other students for HackBCA II. It integrates news from all over the internet and provides it to Firefox OS users. </p>
-<br/>
-	<a href="http://www.kaldersvell.org/" class="btn btn-primary">Learn More</a>
-
+    <div class="col-md-3">
+        <h3 style="font-size: 45px;">Technical Support</h3>
+        <ul>
+        <li>&#160;</li>
+        <li>Server Administration</li>
+        <li>Computer Maintenance</li>
+        <li>Troubleshooting</li>
+        <li>&#160;</li>
+        </ul>
     </div>
--->
-<div class="col-md-2"></div>
+    <div class="col-md-1"></div>
+        <ul>
+        <li>Kaldersvell OS</li>
+        <li>Academy Math Game: Epsilon</li>
+        <li>All-In Firefox OS App</li>
+        <li>MyMorning Cross-Platform Cordova App</li>
+        <li>And many more...</li>
+        </ul>
+
+    <br>
 <div padding="100">&#160;</div>
 </div> 
 </div>
