@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Noah Paladino</title>
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body style="background-color:#000f2a; color: white;">
+    
+    <div id="myScrollSpy">
+        <div id="top" style="background-color:#000f2a; text-align: center; color: white;">
+            
+
+                <img src="./img/NP-v2.svg" id="Logo" class="fadeIn">
+
+                <h1 class="fadeIn one" style="color: #dddddd;">Currently Under Construction</h1>
+            <h2 class="fadeIn two" style="color: #999999;">Please Check Back Later</h2>
+        </div>    
+            
+    </div>
+</body>
+<div padding="100">&#160;</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script type="text/javascript" src="js/smoothscroll.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    function landscapeStatus() {
+        if ($(window).height() <= $(window).width()) {
+            return true
+        } else {
+            return false
+        }
+    }
+    function pageResize(){
+       console.log($(window).height());
+    
+        $("#Logo").css("padding-top", $(window).height() * 1.5 / 8); 
+        $("#Logo").height($(window).height()*1.25/4);
+        $(".btn-circle").width($(".col-md-2").width()*.6);
+        $(".btn-circle").css("border-radius", $(".col-md-2").width()*.6*.05);
+    }
+    console.log($(window).height());
+    
+    pageResize();
+</script>
+
+</html>
