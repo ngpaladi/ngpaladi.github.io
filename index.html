@@ -27,10 +27,10 @@
                 <div class="row">
                     <div class="col-md-2"></div>
                     <div class="col-md-2">
-                        <a type="button" class="btn btn-circle fadeIn two page-scroll " href="#research">Research</a>
+                        <a type="button" class="btn btn-circle fadeIn two page-scroll smoothScroll" href="#research">Research</a>
                     </div>
                     <div class="col-md-2">
-                        <a class="btn btn-circle fadeIn three page-scroll " href="#projects">Projects</a>
+                        <a class="btn btn-circle fadeIn three page-scroll smoothScroll" href="#projects">Projects</a>
                     </div>
                     <div class="col-md-2">
                         <a type="button" class="btn btn-circle fadeIn four" href="http://www.managingexpectationsband.com/">Music</a>
@@ -52,7 +52,7 @@
                                 <div class="caption">
                                     <h2 style="color: black;">Quark-Gluon Plasma</h2>
                                     <p style="color:  #777777;" class="rentry" id="rQGP">I am currently working with simulations of quark-gluon plasmas under Dr. Jacquelyn Noronha-Hostler, improving efficiency of software and running trials.</p>
-
+                                    <p><a href="http://jakinoronhahostler.wixsite.com/jmnh/v-usphydro" class="btn btn-default" role="button">Learn More</a></p>
                                 </div>
                             </div>
                         </div>
@@ -62,7 +62,7 @@
                                 <div class="caption">
                                     <h2 style="color: black;">Rutgers WINLAB</h2>
                                     <p style="color:  #777777;" class="rentry" id="rWIN">I worked with a team of undergraduates to develop a drone that captures wireless spectrum data remotely, and developed a procedure for forcibly taking control of WiFi-enabled drones the following year. </p>
-
+                                    <p><a href="http://www.orbit-lab.org/wiki/Other/Summer/2016/SDRSpectrumDrone" class="btn btn-default" role="button">Learn More</a></p>
                                 </div>
                             </div>
                         </div>
@@ -160,12 +160,11 @@
         $(".shrink-a-bit").css("padding-right", $(window).width() * 1 / 8);
         $(".secTitle").css("padding-bottom", $(window).height() * 1 / 16)
         $(".pentry").css("min-height", getTallestProject() + 7);
-        $(".rentry").css("min-height", getTallestProject() + 7);
+        $(".rentry").css("min-height", getTallestResearch() + 7);
         $(".stdImgSet").height($("#stdImg").height());
     }
 
     pageResize();
-
 </script>
 <script>
     (function(i, s, o, g, r, a, m) {
@@ -182,7 +181,6 @@
 
     ga('create', 'UA-96844481-1', 'auto');
     ga('send', 'pageview');
-
 </script>
 
 </html>
