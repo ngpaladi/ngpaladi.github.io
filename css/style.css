@@ -28,8 +28,9 @@ body {
 }
 
 .splash h2 {
-    color: lightgray;
-    font-weight: normal;
+    color:#9e9e9e;
+    font-family: 'FontAwesome', sans-serif;
+    font-weight: lighter;
 }
 
 #splash-logo {
@@ -129,12 +130,10 @@ footer h6 {
 }
 
 .floating-box {
-    padding: 20px;
-    border-radius: 10px;
+
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    height:100%;
-    width:100%;
+    border-width: 0px;
 }
 
 .btn-bounce {
@@ -164,7 +163,7 @@ footer h6 {
 
 .wrapper {
     height: 100%;
-    width: 95%;
+    width: 100%;
     margin: 0;
     padding: 0;
     border: 0;
@@ -184,12 +183,17 @@ footer h6 {
     color: #404040;
 }
 .card-img-top{
-    border-radius: 5px;
-    height: 45%;
+
+    object-fit: fill;
+    width: 100%;
 
 }
 
 .see-more{
     margin: 5vh;
     min-width: 10vw;
+}
+
+#about-blurb{
+    text-align: center;
 }
