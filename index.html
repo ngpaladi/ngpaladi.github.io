@@ -1,206 +1,251 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <script type="text/javascript">
-        window.location.replace("http://www.noahpaladino.com/underconstruction.html")
-    </script>
-    <meta charset="utf-8">
-    <link rel="shortcut icon" href="favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Noah Paladino</title>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="favicon.ico" type="image/icon">
+  <link rel="icon" href="favicon.ico" type="image/icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CDN Imports (CSS & JS) -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+    integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+    crossorigin="anonymous"></script>
 
-    <title>Noah Paladino</title>
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
+  <!-- Custom CSS -->
+  <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="css/animations.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap" rel="stylesheet">
+
 </head>
 
-<body style="background-color:#000f2a; color: white;">
-    <a href="https://github.com/ngpaladi"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
-    <div id="myScrollSpy">
-        <div id="top">
-            <div style="background-color:#000f2a; text-align: center; color: white;">
-
-
-                <img src="./img/NP-v2.svg" id="Logo" class="fadeIn">
-
-                <h1 class="fadeIn one">Noah Paladino</h1>
-            </div>
-            <div class="container" id="top" style="text-align: center; align-items: center; align-content: center; padding-top: 40px">
-                <div class="row">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-2">
-                        <a type="button" class="btn btn-circle fadeIn two page-scroll smoothScroll" href="#research">Research</a>
-                    </div>
-                    <div class="col-md-2">
-                        <a class="btn btn-circle fadeIn three page-scroll smoothScroll" href="#projects">Projects</a>
-                    </div>
-                    <div class="col-md-2">
-                        <a type="button" class="btn btn-circle fadeIn four" href="http://www.managingexpectationsband.com/">Music</a>
-                    </div>
-                    <div class="col-md-2">
-                        <a type="button" class="btn btn-circle fadeIn five" href="NoahPaladino_CV_December2018_web.pdf">Resume</a>
-                    </div>
-                </div>
-            </div>
+<body>
+  <a href="https://github.com/ngpaladi"><img style="position: absolute; top: 0; right: 0; border: 0;"
+      src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67"
+      alt="Fork me on GitHub"
+      data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+  <div id="myScrollSpy">
+    <div class="container-fluid splash">
+      <img id="splash-logo" class="fade-in" src="assets/img/NP-v2.svg" />
+      <h1 class="fade-in one">NOAH PALADINO</h1>
+      <div class="container-fluid">
+        <div class="row justify-content-md-center pseudo-nav">
+          <div class="col-lg-2">
+            <a type="button" class="btn btn-bounce fade-in two page-scroll smoothScroll" href="#about">About</a>
+          </div>
+          <div class="col-lg-2">
+            <a type="button" class="btn btn-bounce fade-in three" href="./assets/pdf/NoahPaladino_CV_December2018_web.pdf">Resume</a>
+          </div>
+          <div class="col-lg-2">
+            <a class="btn btn-bounce fade-in four page-scroll smoothScroll" href="#blog">Blog</a>
+          </div>
         </div>
-        <div id="research">
-            <div class="container-fluid " style="background-color: #ffffff; color: #040404;">
-                <div class="shrink-a-bit" style="align-content: center; align-items: center; align-self: center;">
-                    <h1 style="color: black; text-align: center;" class="secTitle">Research</h1>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="thumbnail">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/CERN_LHC_collisionneur.jpg/640px-CERN_LHC_collisionneur.jpg" class="stdImgSet">
-                                <div class="caption">
-                                    <h2 style="color: black;">Vector-Like Quarks</h2>
-                                    <p style="color:  #777777;" class="rentry" id="rQGP">I currently work with Professor Stephen Schnetzer searching through data from the Large Hadron Collider at CERN for signs of vector-like quarks.</p>
-                                    <p><a href="http://www.physics.rutgers.edu/hex/CMS.html" class="btn btn-default" role="button">Learn More</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="thumbnail">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/1011252_11-A4-at-144-dpi.jpg/1269px-1011252_11-A4-at-144-dpi.jpg" class="stdImgSet">
-                                <div class="caption">
-                                    <h2 style="color: black;">Quark-Gluon Plasma</h2>
-                                    <p style="color:  #777777;" class="rentry" id="rQGP">I am currently working with simulations of quark-gluon plasmas under Professor Jacquelyn Noronha-Hostler, improving efficiency of software and running trials.</p>
-                                    <p><a href="http://jakinoronhahostler.wixsite.com/jmnh/group" class="btn btn-default" role="button">Learn More</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="thumbnail">
-                                <img src="http://www.orbit-lab.org/raw-attachment/wiki/Other/Summer/2016/SDRSpectrumDrone/betterScreen.png" height="512" class="stdImgSet">
-                                <div class="caption">
-                                    <h2 style="color: black;">Rutgers WINLAB</h2>
-                                    <p style="color:  #777777;" class="rentry" id="rWIN">I worked with a team of undergraduates to develop a drone that captures wireless spectrum data remotely, and developed a procedure for forcibly taking control of WiFi-enabled drones the following year. </p>
-                                    <p><a href="http://www.orbit-lab.org/wiki/Other/Summer/2016/SDRSpectrumDrone" class="btn btn-default" role="button">Learn More</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
+        <div class="row justify-content-md-center pseudo-nav">
+          <div class="col-lg-2">
+            <a type="button" class="btn btn-bounce fade-in three page-scroll smoothScroll" href="#research">Research</a>
+          </div>
+          <div class="col-lg-2">
+            <a type="button" class="btn btn-bounce fade-in four page-scroll smoothScroll" href="#projects">Projects</a>
+          </div>
+          <div class="col-lg-2">
+            <a type="button" class="btn btn-bounce fade-in five"
+              href="http://www.managingexpectationsband.com/">Music</a>
+          </div>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-        <div id="projects">
-            <div class="container-fluid " style="background-color: #e2e2e2; color: #040404;">
-                <div class="shrink-a-bit" style="align-content: center; align-items: center; align-self: center;">
-                    <h1 style="color: black; text-align: center;" class="secTitle">Projects</h1>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="thumbnail">
-                                <img src="img/projects/KaldersvellOS.png" id="stdImg">
-                                <div class="caption">
-                                    <h2 style="color: black;">Kaldersvell OS</h2>
-                                    <p style="color:  #777777;" class="pentry" id="pKOS">I created the Kaldersvell OS project as a way to make Internet of Things development easier for and more accessible to developers by creating a clean, simple interface.</p>
-                                    <!--<p><a href="http://kaldersvell.github.io/" class="btn btn-default" role="button">Learn More</a></p>-->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="thumbnail">
-                                <img src="img/projects/MathGameMCA.png">
-                                <div class="caption">
-                                    <h2 style="color: black;">Academy Math Game</h2>
-                                    <p style="color:  #777777;" class="pentry" id="pMGA">I led the Academy Math Game project for the 2015-2016 and 2016-2017 school years, as Co-President and President respectively. The project seeks to sharpen math skills through an intuitive computer game. </p>
-                                    <!--<p><a href="http://math-game-mca.github.io/" class="btn btn-default" role="button">Learn More</a></p>-->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="thumbnail">
-                                <img src="img/projects/Cdva.png">
-                                <div class="caption">
-                                    <h2 style="color: black;">GUI for Cordova&trade;</h2>
-                                    <p style="color:  #777777;" class="pentry" id="pCGI">User-friendly interface to a useful, well-acclaimed software development tool known as Cordova&trade;, created to assist Windows users unfamiliar with the command prompt interface.
-                                    </p>
-                                    <!--<p><a href="#" class="btn btn-default" role="button">Learn More</a></p>-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+
+    
+
+    <div class="container-fluid section section-box" id="about">
+      <div class="container">
+        <table class="wrapper">
+          <tr>
+            <td>
+
+              <h1>ABOUT ME</h1>
+              <div class="row justify-content-around">
+                <div class="col-md-4">
+                  <table class="wrapper">
+                    <tr>
+                      <td><img id="profile-pic" class="shadow-lg" src="assets/img/NoahPaladino.JPG" /></td>
+                    </tr>
+                  </table>
+
+                </div>
+                <div class="col-md-5">
+                  <table class="wrapper">
+                    <tr>
+                      <td>
+                        <p>
+                          I am a <b>physicist</b> with a background in <b>electrical and computer engineering</b>. My
+                          primary <a href="#research"> research</a> interests are experimental collider-based particle
+                          physics and computational high energy nuclear physics. I have worked on many <a
+                            href="#projects">projects</a> both
+                          as part of and beyond my research. Outside of work, I enjoy both writing and playing music on
+                          the bass
+                          guitar as well as playing racquetball.
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="container-fluid section section-light" id="blog">
+        <div class="container-fluid">
+          <h1>BLOG</h1>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <h3>Coming Soon!</h3>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+        </div>
+      </div>
+
+    <div class="container-fluid section section-dark" id="research">
+
+      <div class="container-fluid">
+        <h1>RESEARCH</h1>
+        <div class="row justify-content-around">
+          <div class="col-sm-3">
+            <div class="card floating-box">
+              <img class="card-img-top"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/CERN_LHC_collisionneur.jpg/640px-CERN_LHC_collisionneur.jpg"
+                alt="Card image cap">
+              <div class="card-body">
+                <h3 class="card-title">Vector-Like Quarks</h3>
+                <p class="card-text">I currently work with Professor Stephen Schnetzer searching through data from the
+                  CMS detector at the Large Hadron Collider at CERN for signs of vector-like quarks.</p>
+                <a href="http://www.physics.rutgers.edu/hex/CMS.html" class="btn btn-light">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="card floating-box">
+              <img class="card-img-top"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/1011252_11-A4-at-144-dpi.jpg/1269px-1011252_11-A4-at-144-dpi.jpg"
+                alt="Card image cap">
+              <div class="card-body">
+                <h3 class="card-title">Quark-Gluon Plasma</h3>
+                <p class="card-text">I am currently working with simulations of quark-gluon plasmas under Professor
+                  Jacquelyn Noronha-Hostler, improving efficiency of software and running trials.</p>
+                <a href="http://jakinoronhahostler.wixsite.com/jmnh/group" class="btn btn-light">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="card floating-box">
+              <img class="card-img-top"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/CMS_160312_06.png/1280px-CMS_160312_06.png"
+                alt="Card image cap">
+              <div class="card-body">
+                <h3 class="card-title">CMS Detector</h3>
+                <p class="card-text">I worked with Dr. Andreas Jung at Purdue University studying the thermal
+                  performance of carbon fiber to be used in support structures in the CMS forward pixel detector.</p>
+                <a href="http://www.physics.purdue.edu/research/reu/research_projects.html"
+                  class="btn btn-light">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn btn-dark see-more" href="./assets/pdf/NoahPaladino_CV_December2018_web.pdf">See More</button>
+      </div>
+    </div>
+
+
+    <div class="container-fluid section section-light" id="projects">
+      <div class="container-fluid">
+        <h1>PROJECTS</h1>
+        <div class="row justify-content-around">
+          <div class="col-sm-3">
+            <div class="card floating-box">
+              <img class="card-img-top" src="./assets/img/Screenshot_2019-07-29_py2700.png" alt="Card image cap">
+              <div class="card-body">
+                <h3 class="card-title">Py2700 Package</h3>
+                <p class="card-text">I developed the Py2700 package to interact with Keithley 2700 series digital
+                  multimeters using Python. The package provides an easy way to read and save data.</p>
+                <a href="https://pypi.org/project/py2700/" class="btn btn-light">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="card floating-box">
+              <img class="card-img-top" src="./assets/img/Screenshot_2019-08-07_RUSPS.png" alt="Card image cap">
+              <div class="card-body">
+                <h3 class="card-title">RUSPS Cluster</h3>
+                <p class="card-text">I am the founder and director of the student-run Rutgers SPS training cluster. The
+                  project aims to introduce undergraduates to high performance physics computing.</p>
+                <a href="http://sps.physics.rutgers.edu/" class="btn btn-light">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="card floating-box">
+              <img class="card-img-top" src="https://hls-fpga-machine-learning.github.io/hls4ml/img/logo.jpg"
+                alt="Card image cap">
+              <div class="card-body">
+                <h3 class="card-title">HLS4ML</h3>
+                <p class="card-text">The HLS4ML project aims to implement machine learning algorithms on FPGAs. My
+                  contributions focus on making the project into a standard Python package.</p>
+                <a href="https://hls-fpga-machine-learning.github.io/hls4ml/" class="btn btn-light">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn btn-light see-more" href="./assets/pdf/NoahPaladino_CV_December2018_web.pdf">See More</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+  <footer class="container-fluid">
+    <div class="row justify-content-around">
+      <div class="col-sm-2" style="padding-bottom: 40px">
+        <h2 style="padding-bottom: 10px">Contact</h2>
+        <h6>Got Questions?</h6>
+        <h6>Send me an email at:</h6>
+        <h6 class="email">noah&#64;noahpaladino.com</h6>
+      </div>
+      <div class="col-sm-2" style="padding-bottom: 40px">
+        <h2 style="padding-bottom: 10px">Resources</h2>
+        <h6><a class="footer-link" href="https://github.com/ngpaladi">My GitHub</a></h6>
+        <a class="footer-link" href="http://cgisvr.physics.rutgers.edu/cgi-bin/physdb/genpip.pl?PaladinoN">Rutgers
+          Physics Page</a>
+      </div>
+
+    </div>
+    <p>&copy; 2019 Noah Paladino. All rights reserved.</p>
+  </footer>
+  <script type="text/javascript" src="js/smoothscroll.js"></script>
+
+  <script type="text/javascript">
+
+
+  </script>
 </body>
-<div class="row">
-
-
-
-</div>
-<div padding="100">&#160;</div>
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script type="text/javascript" src="js/smoothscroll.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script type="text/javascript">
-    function landscapeStatus() {
-        if ($(window).height() <= $(window).width()) {
-            return true
-        } else {
-            return false
-        }
-    }
-
-    function getTallestProject() {
-        var arr = [$("#pKOS").height(), $("#pMGA").height(), $("#pCGI").height()];
-        console.log(arr);
-        console.log(Math.max(...arr));
-        return Math.max(...arr);
-    }
-
-    function getTallestResearch() {
-        var arr = [$("#rQGP").height(), $("#rWIN").height()];
-        console.log(arr);
-        console.log(Math.max(...arr));
-        return Math.max(...arr);
-    }
-
-    function pageResize() {
-        console.log(getTallestProject());
-
-        $("#Logo").css("padding-top", $(window).height() * 1.5 / 8);
-        $("#Logo").height($(window).height() * 1.25 / 4);
-        $(".btn-circle").width($(".col-md-2").width() * .6);
-        $(".btn-circle").css("border-radius", $(".col-md-2").width() * .6 * .05);
-        $("#top").css("min-height", $(window).height() + 25);
-        //$(".shrink-a-bit").width($(window).width()*7/8);
-        $(".shrink-a-bit").css("padding-top", $(window).height() * 1 / 16);
-        $(".shrink-a-bit").css("padding-bottom", $(window).height() * 1 / 8);
-        $(".shrink-a-bit").css("padding-left", $(window).width() * 1 / 8);
-        $(".shrink-a-bit").css("padding-right", $(window).width() * 1 / 8);
-        $(".secTitle").css("padding-bottom", $(window).height() * 1 / 16)
-        $(".pentry").css("min-height", getTallestProject() + 7);
-        $(".rentry").css("min-height", getTallestResearch() + 7);
-        $(".stdImgSet").height($("#stdImg").height());
-    }
-
-    pageResize();
-
-</script>
-<script>
-    (function(i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function() {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-96844481-1', 'auto');
-    ga('send', 'pageview');
-
-</script>
 
 </html>
