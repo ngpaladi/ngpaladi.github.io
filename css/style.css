@@ -139,17 +139,16 @@ footer h6 {
 .btn-bounce {
     margin-top: 15px;
     border: 1px solid #fff;
-    border-radius: 0.5vh;
+    border-radius: 5px;
     width: 90%;
     font-size: 18px;
     color: #fff;
-    background: 0 0;
+    background: rgba(0, 0, 0, 0);
     margin-top: 1.5vh;
     margin-bottom: 1.5vh;
 }
 
 .btn-bounce:hover, .btn-bounce:focus {
-    outline: 0;
     color: #fff;
     background: rgba(255, 255, 255, .2);
 }
