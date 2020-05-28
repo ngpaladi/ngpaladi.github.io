@@ -112,3 +112,18 @@
     -o-animation-delay: 2.1s;
     animation-delay: 2.1s;
 }
+
+.fade-in.six {
+    -webkit-animation-delay: 2.4s;
+    -ms-animation-delay: 2.4s;
+    -moz-animation-delay: 2.4s;
+    -o-animation-delay: 2.4s;
+    animation-delay: 2.4s;
+}
+.fade-in.seven {
+    -webkit-animation-delay: 2.7s;
+    -ms-animation-delay: 2.7s;
+    -moz-animation-delay: 2.7s;
+    -o-animation-delay: 2.7s;
+    animation-delay: 2.7s;
+}
