@@ -245,8 +245,9 @@ footer h6 {
     color: inherit;
     align-content: center;
     text-align: center;
-    
+    size: inherit;
 }
+
 .card-body{
     color: #404040;
 }
@@ -264,4 +265,11 @@ footer h6 {
 
 #about-blurb{
     text-align: center;
+}
+code {
+    color:#252525;
+    background-color: rgb(226, 226, 226);
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 2pt;
 }
