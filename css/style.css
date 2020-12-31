@@ -24,7 +24,7 @@ body {
     min-width: 100vw;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1100px) {
     .splash {
         background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5) ), url('../assets/img/Feynman_Banner_Web.jpg');
         background-attachment: local;
