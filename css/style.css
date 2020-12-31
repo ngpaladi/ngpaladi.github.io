@@ -10,28 +10,27 @@ body {
 
 .splash {
     
-    background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5) ), url('../assets/img/Feynman_Banner_Web_Small_Devices.jpg');
+    background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('../assets/img/Feynman_Banner_Web_Small_Devices.jpg');
     background-color: #141414b2;
     background-attachment: local;
     background-size: cover;
-    padding-top: 10vh;
-    padding-bottom: 8vh;
+    padding-top: 17vh;
+    padding-bottom: 17vh;
     align-content: center;
     align-items: center;
     text-align: center;
     vertical-align: middle;
-    
-    min-width: 100vw;
-}
 
-@media (min-width: 1100px) {
+}
+/*
+@media (min-width: 1200px) {
     .splash {
         background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5) ), url('../assets/img/Feynman_Banner_Web.jpg');
         background-attachment: local;
         background-size: cover;
     }
 }
-
+*/
 .splash h1 {
     font-family: 'FontAwesome', sans-serif;
     font-weight: lighter;
@@ -49,8 +48,8 @@ body {
 }
 
 #splash-logo {
-    margin: 5vh;
-    height: 25vh;
+    margin-bottom: 5vh;
+    height: 28vh;
     border-radius: 50%;
     opacity: 1;
 }
@@ -88,7 +87,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     font-size: calc(10px + 0.85vmin);
-    padding-bottom: 3vh;
+    padding-bottom: 2vh;
     opacity: 1;
 }
 
@@ -123,7 +122,7 @@ body {
 }
 
 .section h1 {
-    padding-bottom: 5vh;
+    padding-bottom: 2.5vh;
 }
 
 .section h2 {
@@ -263,8 +262,9 @@ footer h6 {
     min-width: 10vw;
 }
 
-#about-blurb{
+.section-blurb{
     text-align: center;
+    padding-bottom: 2.5vh;
 }
 code {
     color:#252525;
