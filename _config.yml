@@ -1,0 +1,103 @@
+title: Noah Paladino
+short_title: Noah Paladino
+email: noah@noahpaladino.com
+description: >- # this means to ignore newlines until the next item
+  
+baseurl: "" # comment out for non-github builds (handled automatically in docker build)
+url: "https://noahpaladino.com" # the base hostname & protocol for your site, e.g. http://example.com
+
+affiliations:
+  - org: MIT LNS
+    link: http://web.mit.edu/lns/index.html
+  - org: A3D3
+    link: https://a3d3.ai/
+  - org: FastML
+    link: https://fastmachinelearning.org/
+
+
+research:
+  blurb: >-
+    My research interests are primarily aligned with experimental particle physics,
+     with a focus on instrumentation for dark matter searches and specializing in data acquisition.
+  entries:
+    - title: Dark Sector Searches at SpinQuest
+      link: https://spinquest.fnal.gov/
+      timeline: 2021 - Present
+      publications:
+        - https://doi.org/10.48550/arXiv.2203.08322
+      description: >-
+        As a member of the SpinQuest collaboration, I focus on upgrading the detector for increased sensitivity 
+        to various dark sector portal searches, primarily dark photons. In addition, I manage the experiment's 
+        data acquisition system, and am currently working on an upgrade to allow for streaming data at 54MHz.
+
+    - title: Machine Learning Inference as a Service for Science
+      link: https://indico.cern.ch/event/1387540/contributions/6153409/contribution.pdf
+      timeline: 2024 - Present
+      publications:
+      description: >-
+        Services for Optimized Network Inference on Coprocessors (SONIC) is a framework based on 
+        Nvidia's Triton that makes it easy for large scale scientific experiments (such as those at the Large Hadron Collider)
+        to better use distributed heterogenous compute services for machine learning inference. My involvement primarily relates
+        to packaging and distribution for ease of deployment with current scientific software suites.        
+
+    - title: Vector Like Quark Searches at the Large Hadron Collider
+      link: https://doi.org/10.1103/PhysRevD.110.052004
+      timeline: 2018 - 2024
+      publications:
+        - https://doi.org/10.1103/PhysRevD.102.112004
+        - https://doi.org/10.1103/PhysRevD.110.052004
+      description: >-
+        I analyzed data from the Compact Muon Solenoid (CMS) experiment at CERN with Professor Stephen Schnetzer at 
+        Rutgers University to search for evidence of bottom-type vector-like quarks (VLQs) present in many models
+         involving a composite Higgs boson. 
+
+    - title: Hydronamic Simulations of Quark-Gluon Plasma
+      link: https://doi.org/10.1016/j.nuclphysa.2020.121839
+      timeline: 2017-2018
+      publications:
+        - https://doi.org/10.1016/j.nuclphysa.2020.121839
+      description:
+        I worked with hydrodynamic simulations of quark-gluon plasma that resulted from heavy ion collisions with 
+        Professor Jacquelyn Noronha-Hostler at Rutgers. My involvement was focused on computational performance 
+        optimization and preparing files for initial condition generation.
+
+    - title: CMS Detector Forward Pixel Tracker
+      link: http://www.physics.purdue.edu/research/reu/research_projects.html
+      timeline: Summer 2019
+      publications:
+      description:
+        Through the REU Program in Physics at Purdue University, I worked with Professor Andreas Jung 
+        on hardware upgrades for the CMS detector at CERN. In particular, I focused on thermal conductivity 
+        testing for the carbon fiber mounting system for the forward pixel tracker. I also designed the 
+        data acquisition and monitoring system for a testbench for the tracker's mixed-phase CO2 cooling system.
+
+
+
+
+
+projects:
+  blurb: Beyond my research, I am involved in a variety of technical projects and outreach initiatives.
+  entries:
+    - title: MIT Physics Graduates Advising Graduate Admissions
+      link: https://sites.mit.edu/physgaap/
+      timeline: 2021 - Present
+      description: >-
+        I have served on the MIT Physics Graduates Advising Graduate Admissions committee since I 
+        have been a graduate student at MIT. Through this committee, I have both organized and been a mentor for the
+        Physics Graduate Application Assistance Program (PhysGAAP), where we focus on mentoring aspiring physics PhD students
+        as they navigate the admissions process.
+
+    - title: A3D3 Equity and Career Committee
+      link: https://a3d3.ai/careers/equity-career/
+      timeline: 2022 - Present
+      description: >-
+        Through the A3D3 institute, I have served on the Equity and Career committee since its founding,
+        which aims to make the institute a welcoming environment for all. My responsibilities on this committee have included
+        reviewing applications for the postbac program and organizing training events, as well as managing the institute mentorship program.
+
+
+      
+
+
+exclude: ["CNAME", "LICENSE", "README.md", "Dockerfile", "Makefile", "scripts"]
+
