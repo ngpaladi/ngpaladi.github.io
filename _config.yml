@@ -81,6 +81,8 @@ projects:
     - title: MIT Physics Graduates Advising Graduate Admissions
       link: https://sites.mit.edu/physgaap/
       timeline: 2021 - Present
+      extra_links: 
+        - https://sites.mit.edu/physgaap/
       description: >-
         I have served on the MIT Physics Graduates Advising Graduate Admissions committee since I 
         have been a graduate student at MIT. Through this committee, I have both organized and been a mentor for the
@@ -90,6 +92,8 @@ projects:
     - title: A3D3 Equity and Career Committee
       link: https://a3d3.ai/careers/equity-career/
       timeline: 2022 - Present
+      extra_links: 
+        - https://a3d3.ai/careers/equity-career/
       description: >-
         Through the A3D3 institute, I have served on the Equity and Career committee since its founding,
         which aims to make the institute a welcoming environment for all. My responsibilities on this committee have included

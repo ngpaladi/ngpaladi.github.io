@@ -117,8 +117,8 @@ title: Home
               <p class="card-text">{{entry.description}}</p>
             </div>
             <div class="card-footer">
-              {% for paper in entry.publications %}
-              <a class="badge text-bg-dark" href="{{ paper }}">{{ paper | split: "/" | last }}</a>
+              {% for item in entry.extra_links %}
+              <a class="badge text-bg-dark" href="{{ item }}">{{ item | replace: "http://", "" | replace: "https://", "" | split: "/" | compact | first  }}</a>
               {% endfor %}
             </div>
           </div>
