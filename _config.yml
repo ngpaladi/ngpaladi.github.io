@@ -90,6 +90,13 @@ projects:
         have been a graduate student at MIT. Through this committee, I have both organized and been a mentor for the
         Physics Graduate Application Assistance Program (PhysGAAP), where we focus on mentoring aspiring physics PhD students
         as they navigate the admissions process.
+    - title: MIT Physics Graduate Student Council
+      link: https://physics-gsc.scripts.mit.edu/home/
+      timeline: 2022 - Present
+      extra_links: 
+        - https://physics-gsc.scripts.mit.edu/home/
+      description: >-
+        I have served on the MIT Physics Graduate Student Council since 2022, which focuses on improving the graduate student experience in the MIT Physics Department.
 
     - title: A3D3 Equity and Career Committee
       link: https://a3d3.ai/careers/equity-career/
@@ -97,11 +104,40 @@ projects:
       extra_links: 
         - https://a3d3.ai/careers/equity-career/
       description: >-
-        Through the A3D3 institute, I have served on the Equity and Career committee since its founding,
+        I have served on the A3D3 Equity and Career committee since its founding,
         which aims to make the institute a welcoming environment for all. My responsibilities on this committee have included
         reviewing applications for the postbac program and organizing training events, as well as managing the institute mentorship program.
 
+    - title: MIT Graduate Student Council Bike Safety Working Group
+      link: https://sites.mit.edu/gsc-eab/bike-safety-wg/
+      timeline: 2025 - Present
+      extra_links: 
+        - https://sites.mit.edu/gsc-eab/bike-safety-wg/
+      description: >-
+        I have been a member of the MIT Graduate Student Council External Affairs Committee Bike Safety Working Group since 2025.
+        In this role, I work with the City of Cambridge and MIT to improve bike safety for the MIT community.   
 
+    - title: MIT Bike Lab
+      link: https://engage.mit.edu/tbl/
+      timeline: 2024 - Present
+      extra_links: 
+        - https://engage.mit.edu/tbl/
+      description: >-
+        I have been a volunteer mechanic at the MIT Bike Lab since 2024, and I currently serve as the 
+        lab's treasurer. The Bike Lab is a student-run bike repair shop that provides free repairs to the MIT community.
+
+    - title: MIT Tech Model Railroad Club
+      link: https://tmrc.mit.edu/
+      timeline: 2023 - Present
+      extra_links: 
+        - https://tmrc.mit.edu/
+      description: >-
+        I have been a member of the MIT Tech Model Railroad Club (TMRC) since 2023, where I work on the club's 
+        model railroad layout and help maintain the club's facilities, with a particular focus on the layout electronics.
+        TMRC is a student-run club that has been in operation since 1946. I serve as the club's governor, and I am responsible
+         for managing the club's finances and operations.
+
+    
       
 
 
