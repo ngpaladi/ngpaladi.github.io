@@ -23,9 +23,17 @@ research:
     - title: Dark Sector Searches at SpinQuest
       link: https://spinquest.fnal.gov/
       timeline: 2021 - Present
+      tags:
+        - "Dark Matter"
+        - "Data Acquisition"
+        - "Detector Physics"
+        - "Hardware"
       publications:
         - https://doi.org/10.48550/arXiv.2203.08322
         - https://doi.org/10.48550/arXiv.2502.20590
+      citation_keys:
+        - paladino2022spinquest
+        - paladino2025spinquest_upgrade
       description: >-
         As a member of the SpinQuest collaboration, I focus on upgrading the detector for increased sensitivity 
         to various dark sector portal searches, primarily dark photons. In addition, I manage the experiment's 
@@ -34,8 +42,14 @@ research:
     - title: Machine Learning Inference as a Service for Science
       link: https://indico.cern.ch/event/1387540/contributions/6153409/contribution.pdf
       timeline: 2024 - Present
+      tags:
+        - "Machine Learning"
+        - "Software"
+        - "Data Acquisition"
       publications:
         - https://doi.org/10.48550/arXiv.2506.20657
+      citation_keys:
+        - paladino2024sonic
       description: >-
         Services for Optimized Network Inference on Coprocessors (SONIC) is a framework based on 
         Nvidia's Triton that makes it easy for large scale scientific experiments (such as those at the Large Hadron Collider)
@@ -45,9 +59,16 @@ research:
     - title: Vector Like Quark Searches at the Large Hadron Collider
       link: https://doi.org/10.1103/PhysRevD.110.052004
       timeline: 2018 - 2024
+      tags:
+        - "Particle Physics"
+        - "Data Analysis"
+        - "Software"
       publications:
         - https://doi.org/10.1103/PhysRevD.102.112004
         - https://doi.org/10.1103/PhysRevD.110.052004
+      citation_keys:
+        - cms2020vlq
+        - cms2024vlq
       description: >-
         I analyzed data from the Compact Muon Solenoid (CMS) experiment at CERN with Professor Stephen Schnetzer at 
         Rutgers University to search for evidence of bottom-type vector-like quarks (VLQs) present in many models
@@ -56,8 +77,14 @@ research:
     - title: Hydronamic Simulations of Quark-Gluon Plasma
       link: https://doi.org/10.1016/j.nuclphysa.2020.121839
       timeline: 2017-2018
+      tags:
+        - "Computational Physics"
+        - "Software"
+        - "Data Analysis"
       publications:
         - https://doi.org/10.1016/j.nuclphysa.2020.121839
+      citation_keys:
+        - noronha2020hydrodynamics
       description:
         I worked with hydrodynamic simulations of quark-gluon plasma that resulted from heavy ion collisions with 
         Professor Jacquelyn Noronha-Hostler at Rutgers. My involvement was focused on computational performance 
@@ -66,7 +93,12 @@ research:
     - title: CMS Detector Forward Pixel Tracker
       link: http://www.physics.purdue.edu/research/reu/research_projects.html
       timeline: Summer 2019
+      tags:
+        - "Detector Physics"
+        - "Hardware"
+        - "Data Acquisition"
       publications:
+      citation_keys:
       description:
         Through the REU Program in Physics at Purdue University, I worked with Professor Andreas Jung 
         on hardware upgrades for the CMS detector at CERN. In particular, I focused on thermal conductivity 
@@ -83,6 +115,10 @@ projects:
     - title: MIT Physics Graduates Advising Graduate Admissions
       link: https://sites.mit.edu/physgaap/
       timeline: 2021 - Present
+      tags:
+        - "Outreach"
+        - "Education"
+        - "Mentorship"
       extra_links: 
         - https://sites.mit.edu/physgaap/
       description: >-
@@ -93,6 +129,9 @@ projects:
     - title: MIT Physics Graduate Student Council
       link: https://physics-gsc.scripts.mit.edu/home/
       timeline: 2022 - Present
+      tags:
+        - "Outreach"
+        - "Leadership"
       extra_links: 
         - https://physics-gsc.scripts.mit.edu/home/
       description: >-
@@ -101,6 +140,10 @@ projects:
     - title: A3D3 Equity and Career Committee
       link: https://a3d3.ai/careers/equity-career/
       timeline: 2022 - Present
+      tags:
+        - "Outreach"
+        - "Mentorship"
+        - "Leadership"
       extra_links: 
         - https://a3d3.ai/careers/equity-career/
       description: >-
@@ -111,6 +154,9 @@ projects:
     - title: MIT Graduate Student Council Bike Safety Working Group
       link: https://sites.mit.edu/gsc-eab/bike-safety-wg/
       timeline: 2025 - Present
+      tags:
+        - "Outreach"
+        - "Advocacy"
       extra_links: 
         - https://sites.mit.edu/gsc-eab/bike-safety-wg/
       description: >-
@@ -120,6 +166,10 @@ projects:
     - title: MIT Bike Lab
       link: https://engage.mit.edu/tbl/
       timeline: 2024 - Present
+      tags:
+        - "Outreach"
+        - "Leadership"
+        - "Technical"
       extra_links: 
         - https://engage.mit.edu/tbl/
       description: >-
@@ -129,6 +179,10 @@ projects:
     - title: MIT Tech Model Railroad Club
       link: https://tmrc.mit.edu/
       timeline: 2023 - Present
+      tags:
+        - "Technical"
+        - "Leadership"
+        - "Hardware"
       extra_links: 
         - https://tmrc.mit.edu/
       description: >-

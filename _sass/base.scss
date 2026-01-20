@@ -1,8 +1,12 @@
+// Import modern variables and styles
+@import "variables";
+
+// Keep legacy for Bootstrap compatibility
 $red: #750014;
-$primary: $red;
-// $light: #d2dee8;
+$primary: #750014;
 
 @import "bootstrap/bootstrap";
+@import "modern-portfolio";
 
 
 .rotate-wrapper:hover .rotate {

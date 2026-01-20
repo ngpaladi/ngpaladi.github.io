@@ -1,0 +1,50 @@
+---
+title: Publications
+layout: default
+---
+
+{% include head.html %}
+
+<body>
+  <!-- Hero Section -->
+  <div class="container-fluid splash" style="padding: 5rem 0 4rem 0;">
+    <h1 class="fade-in">PUBLICATIONS</h1>
+    <h5 class="fade-in one text-light">
+      Selected research publications and preprints
+    </h5>
+  </div>
+
+  <!-- Publications Section -->
+  <div class="container-fluid section section-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          {% include bibliography.html %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="container-fluid">
+    <div class="row justify-content-around">
+      <div class="col-sm-2" style="padding-bottom: 40px">
+        <h2 style="padding-bottom: 10px">Contact</h2>
+        <h6>Questions?</h6>
+        <h6>Send me an email at:</h6>
+        <h6 class="email">{{ site.email }}</h6>
+      </div>
+      <div class="col-sm-2" style="padding-bottom: 40px">
+        <h2 style="padding-bottom: 10px">Resources</h2>
+        <h6><a class="footer-link" href="https://github.com/ngpaladi">GitHub</a></h6>
+        <h6><a class="footer-link" href="https://noahpaladino.com/blog">Blog</a></h6>
+        <h6><a class="footer-link" href="/">Home</a></h6>
+      </div>
+    </div>
+    <p>&copy; 2015 -
+      <script type="text/javascript"> document.write(new Date().getFullYear());</script> Noah Paladino. All rights reserved.
+    </p>
+  </footer>
+</body>
+
+</html>

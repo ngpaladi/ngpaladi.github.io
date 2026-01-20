@@ -1,0 +1,53 @@
+<!-- Tag Filter Component -->
+<div class="tag-filter-container">
+  <button class="tag-filter active" data-tag="all" onclick="filterByTag('all')">
+    Show All
+  </button>
+  {% assign all_tags = "" | split: "" %}
+  {% for entry in include.entries %}
+    {% if entry.tags %}
+      {% for tag in entry.tags %}
+        {% unless all_tags contains tag %}
+          {% assign all_tags = all_tags | push: tag %}
+        {% endunless %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+  
+  {% assign sorted_tags = all_tags | sort %}
+  {% for tag in sorted_tags %}
+  <button class="tag-filter" data-tag="{{ tag }}" onclick="filterByTag('{{ tag }}')">
+    {{ tag }}
+  </button>
+  {% endfor %}
+</div>
+
+<script>
+function filterByTag(tag) {
+  // Update active button
+  document.querySelectorAll('.tag-filter').forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.dataset.tag === tag) {
+      btn.classList.add('active');
+    }
+  });
+  
+  // Filter cards
+  const cards = document.querySelectorAll('.filterable-card');
+  cards.forEach(card => {
+    if (tag === 'all') {
+      card.style.display = 'block';
+      card.classList.add('fade-in-up');
+    } else {
+      const cardTags = card.dataset.tags ? card.dataset.tags.split(',') : [];
+      if (cardTags.includes(tag)) {
+        card.style.display = 'block';
+        card.classList.add('fade-in-up');
+      } else {
+        card.style.display = 'none';
+        card.classList.remove('fade-in-up');
+      }
+    }
+  });
+}
+</script>

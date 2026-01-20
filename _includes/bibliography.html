@@ -1,0 +1,93 @@
+<!-- Bibliography Component -->
+<!-- This component renders publications from the BibTeX file -->
+<!-- Note: Since jekyll-scholar is not available on GitHub Pages, we use a JavaScript-based approach -->
+
+<div class="bibliography">
+  <div id="bibliography-entries">
+    <!-- Publications will be dynamically loaded here -->
+  </div>
+</div>
+
+<script>
+// BibTeX data (manually extracted from references.bib)
+// In a real implementation, this could be auto-generated during build
+const publications = [
+  {
+    id: 'paladino2025spinquest_upgrade',
+    title: 'SpinQuest Upgrade for Dark Sector Searches',
+    authors: 'Paladino, Noah and others',
+    venue: 'arXiv preprint arXiv:2502.20590',
+    year: '2025',
+    url: 'https://doi.org/10.48550/arXiv.2502.20590'
+  },
+  {
+    id: 'paladino2024sonic',
+    title: 'Machine Learning Inference as a Service for Science',
+    authors: 'Paladino, Noah and Harris, Philip and Rankin, Dylan and Bueghly, James and Dong, Zhengcheng and Duarte, Javier and others',
+    venue: 'arXiv preprint arXiv:2506.20657',
+    year: '2024',
+    url: 'https://doi.org/10.48550/arXiv.2506.20657'
+  },
+  {
+    id: 'cms2024vlq',
+    title: 'Search for vectorlike leptons in events with two opposite-sign leptons, missing transverse momentum, and jets in proton-proton collisions at √s = 13 TeV',
+    authors: 'CMS Collaboration',
+    venue: 'Physical Review D, Volume 110, Issue 5, Pages 052004',
+    year: '2024',
+    url: 'https://doi.org/10.1103/PhysRevD.110.052004'
+  },
+  {
+    id: 'paladino2022spinquest',
+    title: 'Dark Photon Search at SpinQuest',
+    authors: 'Paladino, Noah and others',
+    venue: 'arXiv preprint arXiv:2203.08322',
+    year: '2022',
+    url: 'https://doi.org/10.48550/arXiv.2203.08322'
+  },
+  {
+    id: 'cms2020vlq',
+    title: 'Search for bottom-type, vector-like quark pair production in a fully hadronic final state in proton-proton collisions at √s = 13 TeV',
+    authors: 'CMS Collaboration',
+    venue: 'Physical Review D, Volume 102, Issue 11, Pages 112004',
+    year: '2020',
+    url: 'https://doi.org/10.1103/PhysRevD.102.112004'
+  },
+  {
+    id: 'noronha2020hydrodynamics',
+    title: 'Hydrodynamic simulations of relativistic heavy-ion collisions with different lattice quantum chromodynamics calculations of the equation of state',
+    authors: 'Noronha-Hostler, J. and Paladino, N. and others',
+    venue: 'Nuclear Physics A, Volume 1005, Pages 121839',
+    year: '2020',
+    url: 'https://doi.org/10.1016/j.nuclphysa.2020.121839'
+  }
+];
+
+// Render bibliography entries
+function renderBibliography(filterKey = null) {
+  const container = document.getElementById('bibliography-entries');
+  if (!container) return;
+  
+  let filteredPubs = publications;
+  if (filterKey) {
+    filteredPubs = publications.filter(pub => pub.id === filterKey);
+  }
+  
+  container.innerHTML = filteredPubs.map(pub => `
+    <div class="bib-entry" id="${pub.id}">
+      <div class="bib-title">${pub.title}</div>
+      <div class="bib-authors">${pub.authors}</div>
+      <div class="bib-venue">${pub.venue}, ${pub.year}</div>
+      <div class="bib-links">
+        <a href="${pub.url}" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-external-link"></i> View Publication
+        </a>
+      </div>
+    </div>
+  `).join('');
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+  renderBibliography();
+});
+</script>

@@ -46,6 +46,9 @@ title: Home
           <a class="btn btn-light btn-bounce fade-in six page-scroll smoothScroll" href="#projects">Projects</a>
         </div>
         <div class="col-lg-2">
+          <a class="btn btn-light btn-bounce fade-in six" href="/publications.html">Publications</a>
+        </div>
+        <div class="col-lg-2">
           <a class="btn btn-light btn-bounce fade-in seven page-scroll smoothScroll"
             href="http://www.noahpaladino.com/blog">Blog</a>
         </div>
@@ -67,29 +70,49 @@ title: Home
         </div>
       </div>
 
-      <div class="row justify-content-center">
+      <!-- Tag Filter -->
+      {% include tags-filter.html entries=site.research.entries %}
+
+      <div class="row justify-content-center" id="research-container">
 
         {% for entry in site.research.entries %}
 
-        <div class="col-md-8">
+        <div class="col-md-8 filterable-card" data-tags="{% if entry.tags %}{{ entry.tags | join: ',' }}{% endif %}">
           <div class="card floating-box m-4">
             <div class="card-body">
               <a href="{{ entry.link | relative_url }}"><h3 class="card-title">{{entry.title}}</h3></a>
-              <h5 class="card-subtitle text-muted">{{entry.timeline}}</h5> <br />
+              <h5 class="card-subtitle text-muted">{{entry.timeline}}</h5>
+              
+              <!-- Tags Display -->
+              {% if entry.tags %}
+              <div class="mt-2 mb-3">
+                {% for tag in entry.tags %}
+                <span class="tag-badge">{{ tag }}</span>
+                {% endfor %}
+              </div>
+              {% endif %}
+              
               <p class="card-text">{{entry.description}}</p>
             </div>
             <div class="card-footer">
               {% for paper in entry.publications %}
-              <a class="badge text-bg-dark" href="{{ paper }}">{{ paper | split: "/" | last }}</a>
+              <a class="badge text-bg-dark" href="{{ paper }}" target="_blank" rel="noopener noreferrer">
+                <i class="fa fa-external-link"></i> {{ paper | split: "/" | last }}
+              </a>
               {% endfor %}
+              {% if entry.citation_keys %}
+                {% for key in entry.citation_keys %}
+                <a class="badge text-bg-primary" href="/publications.html#{{ key }}" title="View in publications">
+                  <i class="fa fa-book"></i> {{ key }}
+                </a>
+                {% endfor %}
+              {% endif %}
             </div>
           </div>
         </div>
         {% endfor %}
 
       </div>
-      <!-- <a class="btn btn-light see-more" href="./assets/pdf/Noah_Paladino_web_cv.pdf">See
-        More</a> -->
     </div>
   </div>
 
@@ -106,19 +129,34 @@ title: Home
         </div>
       </div>
 
-      <div class="row justify-content-center">
+      <!-- Tag Filter -->
+      {% include tags-filter.html entries=site.projects.entries %}
+
+      <div class="row justify-content-center" id="projects-container">
         {% for entry in site.projects.entries %}
 
-        <div class="col-md-8">
+        <div class="col-md-8 filterable-card" data-tags="{% if entry.tags %}{{ entry.tags | join: ',' }}{% endif %}">
           <div class="card floating-box m-4">
             <div class="card-body">
               <a href="{{ entry.link | relative_url }}"><h3 class="card-title">{{entry.title}}</h3></a>
-              <h5 class="card-subtitle text-muted">{{entry.timeline}}</h5> <br />
+              <h5 class="card-subtitle text-muted">{{entry.timeline}}</h5>
+              
+              <!-- Tags Display -->
+              {% if entry.tags %}
+              <div class="mt-2 mb-3">
+                {% for tag in entry.tags %}
+                <span class="tag-badge">{{ tag }}</span>
+                {% endfor %}
+              </div>
+              {% endif %}
+              
               <p class="card-text">{{entry.description}}</p>
             </div>
             <div class="card-footer">
               {% for item in entry.extra_links %}
-              <a class="badge text-bg-dark" href="{{ item }}">{{ item | replace: "http://", "" | replace: "https://", "" | split: "/" | compact | first  }}</a>
+              <a class="badge text-bg-dark" href="{{ item }}" target="_blank" rel="noopener noreferrer">
+                <i class="fa fa-external-link"></i> {{ item | replace: "http://", "" | replace: "https://", "" | split: "/" | compact | first  }}
+              </a>
               {% endfor %}
             </div>
           </div>
@@ -126,8 +164,6 @@ title: Home
         {% endfor %}
       </div>
     </div>
-    <!-- <a class="btn btn-light see-more" href="./assets/pdf/Noah_Paladino_web_cv.pdf">See
-      More</a> -->
   </div>
   </div>
   </div>

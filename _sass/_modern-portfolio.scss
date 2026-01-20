@@ -1,0 +1,426 @@
+// Modern Portfolio Styles
+@import 'variables';
+
+// Base improvements
+body {
+    font-family: $font-family-primary;
+    font-weight: $font-weight-normal;
+    line-height: 1.6;
+    color: $text-dark;
+    background-color: $dark-bg;
+}
+
+// Modern Hero/Splash Section
+.splash {
+    background: linear-gradient(135deg, rgba($primary-dark, 0.95) 0%, rgba($secondary-dark, 0.9) 100%), 
+                url('../img/Feynman_Banner_Web_Small_Devices.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 8rem 0;
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, transparent 0%, rgba($dark-bg, 0.3) 100%);
+    }
+    
+    > * {
+        position: relative;
+        z-index: 1;
+    }
+    
+    h1 {
+        font-family: $font-family-heading;
+        font-weight: $font-weight-bold;
+        letter-spacing: -0.025em;
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        margin-bottom: $spacing-md;
+    }
+    
+    h4, h5 {
+        font-weight: $font-weight-medium;
+        letter-spacing: 0.025em;
+    }
+    
+    .badge {
+        font-weight: $font-weight-medium;
+        padding: $spacing-xs $spacing-md;
+        margin: 0 $spacing-xs;
+        transition: all $transition-base;
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.2) !important;
+            transform: translateY(-2px);
+        }
+    }
+}
+
+#splash-logo {
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    box-shadow: $shadow-2xl;
+    transition: transform $transition-slow;
+    
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+// Modern Buttons
+.btn-bounce {
+    font-weight: $font-weight-semibold;
+    letter-spacing: 0.025em;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all $transition-base;
+    padding: $spacing-sm $spacing-lg;
+    
+    &:hover, &:focus {
+        background: rgba(255, 255, 255, 0.25);
+        border-color: rgba(255, 255, 255, 0.5);
+        transform: translateY(-2px);
+        box-shadow: $shadow-lg;
+    }
+}
+
+.btn-social {
+    transition: all $transition-base;
+    
+    &:hover {
+        transform: translateY(-3px) scale(1.1);
+        color: $primary-light !important;
+    }
+}
+
+// Modern Sections
+.section {
+    padding: $spacing-2xl 0;
+    
+    h1 {
+        font-family: $font-family-heading;
+        font-weight: $font-weight-bold;
+        letter-spacing: -0.025em;
+        margin-bottom: $spacing-lg;
+        position: relative;
+        display: inline-block;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, $primary-color, $secondary-color);
+            border-radius: $border-radius-sm;
+        }
+    }
+    
+    p {
+        font-size: 1.125rem;
+        line-height: 1.75;
+        color: inherit;
+    }
+}
+
+.section-light {
+    background: linear-gradient(to bottom, $light-bg 0%, $light-bg-secondary 100%);
+    color: $text-dark;
+}
+
+.section-dark {
+    background: linear-gradient(to bottom, $dark-bg-lighter 0%, $dark-bg 100%);
+    color: $text-light;
+}
+
+// Modern Card Design
+.floating-box {
+    border: none;
+    border-radius: $border-radius-xl;
+    overflow: hidden;
+    transition: all $transition-slow;
+    box-shadow: $shadow-md;
+    background: white;
+    
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: $shadow-2xl;
+        
+        .card-title {
+            color: $primary-color;
+        }
+    }
+    
+    .card-body {
+        padding: $spacing-lg;
+        
+        .card-title {
+            font-family: $font-family-heading;
+            font-weight: $font-weight-bold;
+            font-size: 1.5rem;
+            margin-bottom: $spacing-sm;
+            transition: color $transition-base;
+            
+            a {
+                color: inherit;
+                text-decoration: none;
+                
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+        
+        .card-subtitle {
+            font-weight: $font-weight-medium;
+            font-size: 0.95rem;
+            color: $text-muted !important;
+            margin-bottom: $spacing-md;
+        }
+        
+        .card-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: $text-dark;
+            text-align: left;
+        }
+    }
+    
+    .card-footer {
+        background: $light-bg-secondary;
+        border-top: none;
+        padding: $spacing-md $spacing-lg;
+        
+        .badge {
+            font-weight: $font-weight-medium;
+            padding: $spacing-xs $spacing-md;
+            margin: $spacing-xs;
+            transition: all $transition-base;
+            
+            &:hover {
+                transform: translateY(-2px);
+            }
+        }
+    }
+}
+
+// Tag System
+.tag-filter-container {
+    margin-bottom: $spacing-xl;
+    text-align: center;
+    
+    .tag-filter {
+        display: inline-block;
+        padding: $spacing-xs $spacing-md;
+        margin: $spacing-xs;
+        border-radius: $border-radius-lg;
+        border: 2px solid $primary-color;
+        background: transparent;
+        color: $primary-color;
+        font-weight: $font-weight-medium;
+        cursor: pointer;
+        transition: all $transition-base;
+        
+        &:hover {
+            background: $primary-color;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: $shadow-md;
+        }
+        
+        &.active {
+            background: $primary-color;
+            color: white;
+            box-shadow: $shadow-md;
+        }
+    }
+}
+
+.tag-badge {
+    display: inline-block;
+    padding: $spacing-xs $spacing-md;
+    margin: $spacing-xs / 2;
+    border-radius: $border-radius-lg;
+    font-size: 0.875rem;
+    font-weight: $font-weight-medium;
+    background: linear-gradient(135deg, $primary-light 0%, $secondary-light 100%);
+    color: white;
+    transition: all $transition-base;
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: $shadow-sm;
+    }
+}
+
+// Section Dark Tags
+.section-dark {
+    .tag-filter {
+        border-color: $primary-light;
+        color: $primary-light;
+        
+        &:hover, &.active {
+            background: $primary-light;
+            color: $dark-bg;
+        }
+    }
+}
+
+// Footer Modern Design
+footer {
+    background: linear-gradient(to bottom, $dark-bg 0%, #000 100%);
+    padding: $spacing-xl 0 $spacing-lg 0;
+    
+    h2 {
+        font-family: $font-family-heading;
+        font-weight: $font-weight-bold;
+        font-size: 1.25rem;
+        letter-spacing: 0.025em;
+    }
+    
+    h6 {
+        font-weight: $font-weight-normal;
+        color: $text-muted-light;
+    }
+    
+    .email {
+        color: $primary-light;
+        font-weight: $font-weight-medium;
+    }
+    
+    .footer-link {
+        color: $text-muted-light;
+        transition: color $transition-base;
+        
+        &:hover {
+            color: $primary-light;
+        }
+    }
+}
+
+// Bibliography Styles
+.bibliography {
+    .bib-entry {
+        margin-bottom: $spacing-lg;
+        padding: $spacing-md;
+        background: white;
+        border-radius: $border-radius-md;
+        border-left: 4px solid $primary-color;
+        box-shadow: $shadow-sm;
+        transition: all $transition-base;
+        
+        &:hover {
+            box-shadow: $shadow-md;
+            transform: translateX(4px);
+        }
+        
+        .bib-title {
+            font-weight: $font-weight-semibold;
+            color: $text-dark;
+            margin-bottom: $spacing-xs;
+        }
+        
+        .bib-authors {
+            color: $text-muted;
+            font-size: 0.95rem;
+            margin-bottom: $spacing-xs;
+        }
+        
+        .bib-venue {
+            color: $text-muted;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        
+        .bib-links {
+            margin-top: $spacing-sm;
+            
+            a {
+                color: $primary-color;
+                text-decoration: none;
+                margin-right: $spacing-md;
+                font-weight: $font-weight-medium;
+                
+                &:hover {
+                    color: $primary-dark;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+// Responsive improvements
+@media (max-width: $breakpoint-md) {
+    .splash {
+        padding: 5rem 0;
+        
+        h1 {
+            font-size: 2rem;
+        }
+        
+        .badge {
+            margin: $spacing-xs / 2;
+            font-size: 0.875rem;
+        }
+    }
+    
+    .section {
+        padding: $spacing-xl 0;
+        
+        h1 {
+            font-size: 2rem;
+        }
+    }
+    
+    .floating-box {
+        margin: $spacing-md 0 !important;
+    }
+    
+    .btn-bounce {
+        margin: $spacing-xs 0;
+    }
+}
+
+// Accessibility improvements
+.btn:focus,
+.tag-filter:focus,
+a:focus {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+}
+
+// Smooth scroll behavior
+html {
+    scroll-behavior: smooth;
+}
+
+// Improved link styling
+a {
+    transition: all $transition-base;
+}
+
+// Loading animations
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp $transition-slow ease-out;
+}
