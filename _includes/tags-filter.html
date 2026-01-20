@@ -44,7 +44,7 @@ function filterByTag(tag) {
       card.classList.add('fade-in-up');
       visibleCount++;
     } else {
-      const cardTags = card.dataset.tags ? card.dataset.tags.split(',') : [];
+      const cardTags = card.dataset.tags ? card.dataset.tags.split(',').map(t => t.trim()) : [];
       if (cardTags.includes(tag)) {
         card.style.display = 'block';
         card.setAttribute('aria-hidden', 'false');
