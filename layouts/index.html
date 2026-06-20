@@ -2,7 +2,9 @@
 
 <body>
   <header class="hero">
-    <img class="hero-portrait" src="{{ "assets/img/Noah_Paladino_Headshot_Square.jpg" | relURL }}" alt="Noah Paladino" />
+    <img class="hero-portrait" id="hero-portrait" src="{{ "assets/img/Noah_Paladino_Headshot_Square.jpg" | relURL }}"
+      data-default-src="{{ "assets/img/Noah_Paladino_Headshot_Square.jpg" | relURL }}"
+      data-alt-src="{{ "assets/img/moopett.PNG" | relURL }}" alt="Noah Paladino" />
 
     <nav class="socials" aria-label="Social links">
       <a href="https://github.com/ngpaladi" aria-label="GitHub">
@@ -24,7 +26,7 @@
 
     <div class="hero-group">
       <h1 class="hero-name">Noah Paladino</h1>
-      <p class="hero-role">PhD Candidate in Physics at MIT</p>
+      <p class="hero-role">PhD Candidate in Physics at <span class="mit-text" data-normal="MIT" data-alt="Muppet Institute of Technology">MIT</span></p>
     </div>
 
     <div class="hero-group hero-group--affiliations">
@@ -39,7 +41,7 @@
     <nav class="hero-nav" aria-label="Page sections">
       <a href="#research">Research</a>
       <a href="#projects">Projects</a>
-      <a href="http://www.noahpaladino.com/blog">Blog</a>
+      <a href="{{ "/blog/" | relURL }}">Blog</a>
     </nav>
   </header>
 
@@ -96,6 +98,31 @@
         </article>
         {{ end }}
       </div>
+    </div>
+  </section>
+
+  {{ $blog := site.GetPage "blog" }}
+  <section class="section section--paper" id="blog">
+    <div class="wrap">
+      <span class="section-kicker">&sect; 03</span>
+      <h2 class="section-title">Blog</h2>
+      <p class="section-blurb">{{ $blog.Params.blurb }}</p>
+
+      <div class="entries">
+        {{ range first 3 $blog.Pages.ByDate.Reverse }}
+        <article class="entry">
+          <div class="entry-meta">
+            <span class="entry-time">{{ .Date.Format "Jan 2, 2006" }}</span>
+          </div>
+          <div class="entry-body">
+            <h3 class="entry-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+            <p class="entry-desc">{{ .Description }}</p>
+          </div>
+        </article>
+        {{ end }}
+      </div>
+
+      <a class="see-more" href="{{ "/blog/" | relURL }}">See all posts &rarr;</a>
     </div>
   </section>
 

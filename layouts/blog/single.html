@@ -1,0 +1,29 @@
+{{ partial "head.html" . }}
+
+<body>
+  <header class="site-header">
+    <div class="wrap site-header-inner">
+      <a class="wordmark" href="{{ "/" | relURL }}">Noah Paladino</a>
+      <nav class="hero-nav" aria-label="Page sections">
+        <a href="{{ "/#research" | relURL }}">Research</a>
+        <a href="{{ "/#projects" | relURL }}">Projects</a>
+        <a href="{{ "/blog/" | relURL }}">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <article class="section section--paper post">
+    <div class="wrap wrap--narrow">
+      <span class="section-kicker"><a href="{{ "/blog/" | relURL }}">&sect; Blog</a></span>
+      <h1 class="post-title">{{ .Title }}</h1>
+      <p class="post-meta">{{ .Date.Format "January 2, 2006" }}</p>
+      <div class="post-content">
+        {{ .Content }}
+      </div>
+    </div>
+  </article>
+
+  {{ partial "footer.html" . }}
+</body>
+
+</html>
