@@ -3,7 +3,7 @@ locale = "en-us"
 title = "Noah Paladino"
 
 enableRobotsTXT = true
-disableKinds = ["taxonomy", "term", "RSS"]
+disableKinds = ["taxonomy", "term"]
 
 [params]
   shortTitle = "Noah Paladino"
@@ -12,3 +12,17 @@ disableKinds = ["taxonomy", "term", "RSS"]
 
 [services.googleAnalytics]
   id = "G-BWXVTW93YK"
+
+[outputs]
+  home = ["HTML"]
+  section = ["HTML", "RSS"]
+
+[outputFormats.RSS]
+  baseName = "feed"
+
+[markup.goldmark.extensions.passthrough]
+  enable = true
+
+  [markup.goldmark.extensions.passthrough.delimiters]
+    block = [["\\[", "\\]"]]
+    inline = [["\\(", "\\)"]]

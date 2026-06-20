@@ -28,6 +28,67 @@
   --measure: 960px;
 }
 
+/* Hidden theme switch (footer button) — every color/font below is a custom
+   property already used throughout the page, so this one block re-skins
+   the whole site without touching any other rule. */
+html.alt-mode {
+  --ink: #1b3a24;
+  --ink-raised: #234a2d;
+  --paper: #fbe8a6;
+  --paper-raised: #f5dd8a;
+
+  --accent: #b8551c;
+  --accent-bright: #d4691f;
+
+  --text-on-ink: #f5efd9;
+  --text-on-ink-muted: #a8c9b0;
+  --text-on-paper: #8a3f12;
+  --text-on-paper-muted: #a06b35;
+
+  --rule-on-ink: rgba(212, 105, 31, 0.35);
+  --rule-on-paper: rgba(138, 63, 18, 0.22);
+
+  --font-display: "Fredoka", sans-serif;
+  --font-body: "Baloo 2", sans-serif;
+}
+
+html.alt-mode .hero {
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(212, 105, 31, 0.18), transparent 60%),
+    linear-gradient(180deg, rgba(27, 58, 36, 0.55) 0%, rgba(27, 58, 36, 0.88) 55%, var(--ink) 100%),
+    url("../img/Feynman_Banner_Web_Small_Devices.jpg");
+}
+
+@keyframes alt-wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+html.alt-mode .hero-portrait {
+  animation: alt-wiggle 2.2s ease-in-out infinite;
+}
+
+html.alt-mode .affiliations a,
+html.alt-mode .entry-tags a {
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+html.alt-mode .socials a {
+  position: relative;
+  z-index: 2;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+html.alt-mode .socials a:nth-child(1) {
+  z-index: 3;
+}
+
+html.alt-mode .affiliations a:hover,
+html.alt-mode .socials a:hover,
+html.alt-mode .entry-tags a:hover {
+  transform: rotate(-4deg) scale(1.1);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -448,6 +509,28 @@ img {
   }
 }
 
+.see-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+
+.section--ink .see-more {
+  color: var(--accent-bright);
+}
+
+.see-more:hover {
+  color: var(--accent-bright);
+  gap: 0.65rem;
+}
+
 /* ===== Footer ===== */
 
 .site-footer {
@@ -488,12 +571,174 @@ img {
   color: var(--accent-bright);
 }
 
+.mode-toggle {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0 1.75rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--rule-on-ink);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-on-ink-muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, transform 0.25s cubic-bezier(0.3, 1.5, 0.7, 1);
+}
+
+.mode-toggle:hover {
+  color: var(--accent-bright);
+  border-color: var(--accent-bright);
+  background: rgba(113, 148, 247, 0.1);
+}
+
+html.alt-mode .mode-toggle {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+html.alt-mode .mode-toggle:hover {
+  color: var(--accent-bright);
+  border-color: var(--accent-bright);
+  background: rgba(184, 85, 28, 0.15);
+}
+
 .copyright {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   letter-spacing: 0.03em;
   color: var(--text-on-ink-muted);
   opacity: 0.7;
+}
+
+/* ===== Blog ===== */
+
+.site-header {
+  background: var(--ink);
+  border-bottom: 1px solid var(--rule-on-ink);
+  padding: 1.75rem 0;
+}
+
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #f5f1e6;
+  letter-spacing: 0.03em;
+}
+
+.site-header .hero-nav {
+  margin-top: 0;
+}
+
+.wrap--narrow {
+  max-width: 700px;
+}
+
+.post-title {
+  font-family: var(--font-display);
+  font-weight: 580;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.2;
+  margin: 0 0 0.5rem;
+}
+
+.post-meta {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-on-paper-muted);
+  margin: 0 0 2.5rem;
+}
+
+.post-content {
+  font-size: 1.08rem;
+}
+
+.post-content p {
+  margin: 0 0 1.4rem;
+}
+
+.post-content h2,
+.post-content h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin: 2.2rem 0 1rem;
+}
+
+.post-content a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: var(--rule-on-paper);
+}
+
+.post-content a:hover {
+  color: var(--accent-bright);
+}
+
+.post-content img {
+  margin: 1.75rem auto;
+  border: 1px solid var(--rule-on-paper);
+}
+
+.post-content blockquote {
+  margin: 1.5rem 0;
+  padding-left: 1.25rem;
+  border-left: 3px solid var(--rule-on-paper);
+  color: var(--text-on-paper-muted);
+}
+
+.post-content pre {
+  background: var(--ink);
+  color: var(--text-on-ink);
+  padding: 1.25rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.post-content code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+.post-content pre code {
+  padding: 0;
+  background: none;
+}
+
+.post-content hr {
+  border: none;
+  border-top: 1px solid var(--rule-on-paper);
+  margin: 2.5rem 0;
+}
+
+.post-content h6 {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text-on-paper-muted);
+}
+
+.post-content .footnotes {
+  font-size: 0.85rem;
+  color: var(--text-on-paper-muted);
+  margin-top: 2.5rem;
+  border-top: 1px solid var(--rule-on-paper);
+  padding-top: 1.5rem;
 }
 
 /* ===== 404 ===== */
@@ -558,7 +803,8 @@ img {
 @media (prefers-reduced-motion: reduce) {
 
   .hero > *,
-  .entry {
+  .entry,
+  .hero-portrait {
     animation: none !important;
     transition: none !important;
     opacity: 1 !important;

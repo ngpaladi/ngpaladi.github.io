@@ -9,9 +9,262 @@
       <div class="footer-col">
         <h2>Resources</h2>
         <a href="https://github.com/ngpaladi">GitHub</a>
-        <a href="https://noahpaladino.com/blog">Blog</a>
+        <a href="{{ "/blog/" | relURL }}">Blog</a>
       </div>
     </div>
+    <button type="button" id="mode-toggle" class="mode-toggle" aria-pressed="false">Muppetize</button>
     <p class="copyright">&copy; 2015&ndash;{{ now.Year }} Noah Paladino. All rights reserved.</p>
   </div>
 </footer>
+
+<script>
+  (function () {
+    var html = document.documentElement;
+    var toggle = document.getElementById("mode-toggle");
+    var portrait = document.getElementById("hero-portrait");
+    var mitEls = document.querySelectorAll(".mit-text");
+
+    var socialIcons = document.querySelectorAll(".socials a");
+    var lead = socialIcons[0];
+    var rest = lead
+      ? Array.prototype.filter.call(socialIcons, function (el) { return el !== lead; })
+      : [];
+    var raf = null;
+    var leadHome, restHome, leadPos, restPos;
+    var margin = 16;
+    var bounceFreq = 14;
+    var bounceAmp = 5;
+    var speedFast = 95;
+    var speedSlow = 70;
+    var gapMin = 80;
+    var burstDuration = 450;
+    var pauseDuration = 500;
+    var epsilon = 1;
+    var phase, phaseStart, homed, wallX;
+
+    function clampToViewport(home, pos) {
+      pos.x = Math.max(margin - home.left, Math.min(window.innerWidth - margin - home.width - home.left, pos.x));
+      pos.y = Math.max(margin - home.top, Math.min(window.innerHeight - margin - home.height - home.top, pos.y));
+    }
+
+    function stepToward(pos, home, targetX, targetY, speed, dt) {
+      var curX = home.left + pos.x;
+      var curY = home.top + pos.y;
+      var d = Math.hypot(targetX - curX, targetY - curY) || 1;
+      pos.x += ((targetX - curX) / d) * speed * dt;
+      pos.y += ((targetY - curY) / d) * speed * dt;
+      clampToViewport(home, pos);
+    }
+
+    function hopFor(time, offset) {
+      return Math.abs(Math.sin((time / 1000) * bounceFreq + offset)) * bounceAmp;
+    }
+
+    function nearestIndex(x, y) {
+      var nearest = 0;
+      var nearestDist = Infinity;
+      rest.forEach(function (icon, i) {
+        var ox = restHome[i].left + restPos[i].x;
+        var oy = restHome[i].top + restPos[i].y;
+        var d = Math.hypot(ox - x, oy - y);
+        if (d < nearestDist) {
+          nearestDist = d;
+          nearest = i;
+        }
+      });
+      return nearest;
+    }
+
+    function tick(time) {
+      var dt = tick.last ? Math.min((time - tick.last) / 1000, 0.05) : 0;
+      tick.last = time;
+      if (phaseStart === null) {
+        phaseStart = time;
+      }
+      var elapsed = time - phaseStart;
+
+      var leadX = leadHome.left + leadPos.x;
+      var leadY = leadHome.top + leadPos.y;
+      var nearI, nearX, nearY, nearDist;
+
+      if (phase === "enter" || phase === "scatter") {
+        // Keeps closing on whichever icon is nearest, but never fully closes the gap.
+        nearI = nearestIndex(leadX, leadY);
+        nearX = restHome[nearI].left + restPos[nearI].x;
+        nearY = restHome[nearI].top + restPos[nearI].y;
+        nearDist = Math.hypot(nearX - leadX, nearY - leadY);
+        if (nearDist > gapMin) {
+          stepToward(leadPos, leadHome, nearX, nearY, speedFast, dt);
+        }
+        var leadHop = hopFor(time, 0);
+        lead.style.transform = "translate(" + leadPos.x + "px, " + (leadPos.y - leadHop) + "px) scale(0.85)";
+      } else if (phase === "alert" || phase === "pause") {
+        // Holds position; "regroup" reverses who moves toward whom.
+        lead.style.transform = "translate(" + leadPos.x + "px, " + leadPos.y + "px) scale(0.85)";
+      } else {
+        // "regroup": eases back toward home at the slower rate.
+        var leadHomeDist = Math.hypot(leadPos.x, leadPos.y);
+        if (leadHomeDist > epsilon) {
+          stepToward(leadPos, leadHome, leadHome.left, leadHome.top, speedSlow, dt);
+        } else {
+          leadPos.x = 0;
+          leadPos.y = 0;
+        }
+        var settled = leadHomeDist <= epsilon;
+        var leadHop2 = settled ? 0 : hopFor(time, 0);
+        lead.style.transform = "translate(" + leadPos.x + "px, " + (leadPos.y - leadHop2) + "px) scale(0.85)";
+      }
+
+      if (phase === "enter") {
+        if (nearDist <= gapMin) {
+          phase = "alert";
+          phaseStart = time;
+        }
+      } else if (phase === "alert") {
+        var p = Math.min(elapsed / burstDuration, 1);
+        var pop = Math.sin(p * Math.PI);
+        rest.forEach(function (icon) {
+          icon.style.transform = "translate(0px, " + (-pop * 14) + "px) scale(" + (1 + pop * 0.18) + ")";
+        });
+        if (p >= 1) {
+          phase = "scatter";
+          phaseStart = time;
+          var farIdx = 0;
+          restHome.forEach(function (h, i) {
+            if (h.left > restHome[farIdx].left) {
+              farIdx = i;
+            }
+          });
+          wallX = window.innerWidth - margin - restHome[farIdx].width - restHome[farIdx].left;
+        }
+      } else if (phase === "scatter") {
+        // Shifts every icon by the same delta so the group keeps its
+        // spacing instead of converging on one point.
+        var allOut = true;
+        rest.forEach(function (icon, i) {
+          restPos[i].x = Math.min(restPos[i].x + speedSlow * dt, wallX);
+          homed[i] = restPos[i].x >= wallX - 0.5;
+          if (!homed[i]) {
+            allOut = false;
+          }
+          var hop = homed[i] ? 0 : hopFor(time, i);
+          icon.style.transform = "translate(" + restPos[i].x + "px, " + (restPos[i].y - hop) + "px)";
+        });
+        if (allOut) {
+          phase = "pause";
+          phaseStart = time;
+        }
+      } else if (phase === "pause") {
+        rest.forEach(function (icon, i) {
+          icon.style.transform = "translate(" + restPos[i].x + "px, " + restPos[i].y + "px)";
+        });
+        if (elapsed >= pauseDuration) {
+          phase = "regroup";
+          phaseStart = time;
+        }
+      } else {
+        // Moves as one block (same idea as "scatter") with a floor so it
+        // can't close nearer than the row's natural spacing on the
+        // element nearest the lead — keeps the faster group from passing
+        // through the slower one mid-transit.
+        var frontHome = restHome[0];
+        var gap = Math.min(gapMin, frontHome.left - leadHome.left);
+        var nextX = Math.max(restPos[0].x - speedFast * dt, 0);
+        var floorX = leadX + gap - frontHome.left;
+        nextX = Math.max(nextX, floorX, 0);
+        var allIn = nextX <= epsilon;
+        rest.forEach(function (icon, i) {
+          restPos[i].x = nextX;
+          var hop = allIn ? 0 : hopFor(time, i);
+          icon.style.transform = "translate(" + restPos[i].x + "px, " + (restPos[i].y - hop) + "px)";
+        });
+        if (allIn && Math.hypot(leadPos.x, leadPos.y) <= epsilon) {
+          stopScene();
+          return;
+        }
+      }
+
+      raf = requestAnimationFrame(tick);
+    }
+
+    function startScene() {
+      var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (!lead || rest.length === 0 || raf || reduceMotion) {
+        return;
+      }
+      leadHome = lead.getBoundingClientRect();
+      restHome = rest.map(function (icon) { return icon.getBoundingClientRect(); });
+      // Starts off-screen so it animates into place instead of just appearing.
+      leadPos = { x: margin - leadHome.left, y: 0 };
+      restPos = rest.map(function () { return { x: 0, y: 0 }; });
+      phase = "enter";
+      phaseStart = null;
+      homed = rest.map(function () { return false; });
+      tick.last = null;
+      raf = requestAnimationFrame(tick);
+    }
+
+    function stopScene() {
+      if (raf) {
+        cancelAnimationFrame(raf);
+      }
+      raf = null;
+      if (lead) {
+        lead.style.transform = "";
+      }
+      rest.forEach(function (icon) {
+        icon.style.transform = "";
+      });
+    }
+
+    function applyMode(on) {
+      html.classList.toggle("alt-mode", on);
+      toggle.setAttribute("aria-pressed", String(on));
+      toggle.textContent = on ? "Un-Muppetize" : "Muppetize";
+      toggle.style.transform = "";
+      if (portrait) {
+        portrait.src = on ? portrait.dataset.altSrc : portrait.dataset.defaultSrc;
+      }
+      mitEls.forEach(function (el) {
+        el.textContent = on ? el.dataset.alt : el.dataset.normal;
+      });
+      if (on) {
+        startScene();
+      } else {
+        stopScene();
+      }
+    }
+
+    applyMode(localStorage.getItem("altMode") === "on");
+
+    toggle.addEventListener("click", function () {
+      var next = !html.classList.contains("alt-mode");
+      localStorage.setItem("altMode", next ? "on" : "off");
+      dodges = 0;
+      var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (next) {
+        // This control sits low on the page, so jump to the top first
+        // (bypassing the smooth-scroll CSS) before measuring element
+        // positions below.
+        window.scrollTo({ top: 0, behavior: "instant" });
+      }
+      applyMode(next);
+      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+    });
+
+    // Nudges away from the cursor a few times before allowing the click through.
+    var dodges = 0;
+    var maxDodges = 2;
+    toggle.addEventListener("mouseenter", function () {
+      var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduceMotion || html.classList.contains("alt-mode") || dodges >= maxDodges) {
+        return;
+      }
+      dodges++;
+      var maxOffset = toggle.offsetWidth / 2;
+      var dx = (Math.random() * 2 - 1) * maxOffset;
+      var spin = (Math.random() - 0.5) * 30;
+      toggle.style.transform = "translate(" + dx + "px, 0) rotate(" + spin + "deg)";
+    });
+  })();
+</script>
