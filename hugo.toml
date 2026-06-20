@@ -1,0 +1,14 @@
+baseURL = "https://noahpaladino.com/"
+locale = "en-us"
+title = "Noah Paladino"
+
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term", "RSS"]
+
+[params]
+  shortTitle = "Noah Paladino"
+  email = "noah@noahpaladino.com"
+  description = "Noah Paladino, PhD Candidate in Physics at MIT, researching dark sector detector instrumentation and data acquisition for particle physics experiments."
+
+[services.googleAnalytics]
+  id = "G-BWXVTW93YK"

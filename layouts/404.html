@@ -1,0 +1,14 @@
+{{ partial "head.html" . }}
+
+<body>
+    <div class="error-page">
+        <img class="error-mark" src="{{ "assets/img/NP.svg" | relURL }}" alt="" />
+        <h1 class="error-code">404</h1>
+        <p class="error-message">It appears this page cannot be found</p>
+        <a class="error-home" href="{{ "/" | relURL }}">Return Home</a>
+    </div>
+
+    {{ partial "footer.html" . }}
+</body>
+
+</html>

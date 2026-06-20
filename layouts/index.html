@@ -1,0 +1,125 @@
+{{ partial "head.html" . }}
+
+<body>
+  <header class="hero">
+    <img class="hero-portrait" src="{{ "assets/img/Noah_Paladino_Headshot_Square.jpg" | relURL }}" alt="Noah Paladino" />
+
+    <nav class="socials" aria-label="Social links">
+      <a href="https://github.com/ngpaladi" aria-label="GitHub">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+      </a>
+      <a href="https://twitter.com/noahpaladino" aria-label="Twitter">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a3.27 3.27 0 0 0 .086.745A9.325 9.325 0 0 1 1.064 3.69a3.286 3.286 0 0 0 1.016 4.382A3.323 3.323 0 0 1 .64 7.671c-.001.014-.001.028-.001.042a3.286 3.286 0 0 0 2.632 3.218 3.203 3.203 0 0 1-1.482.056 3.29 3.29 0 0 0 3.072 2.281A6.595 6.595 0 0 1 .78 13.58a6.69 6.69 0 0 0 4.245 1.491z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/noahpaladino" aria-label="LinkedIn">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>
+      </a>
+      <a href="https://scholar.google.com/citations?user=iocpnRQAAAAJ&amp;hl=en" aria-label="Google Scholar">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.932 10.327L3 7.125 12 0l9 7.125-3.932 3.202C16.161 8.437 14.234 7.125 12 7.125c-2.233 0-4.161 1.311-5.069 3.202z"/><path d="M12 7.5c3.311 0 6 2.689 6 6S15.311 19.5 12 19.5s-6-2.689-6-6 2.689-6 6-6z"/></svg>
+      </a>
+      <a href="https://orcid.org/0000-0003-1225-537X" aria-label="ORCID">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947 0 .525-.422.947-.947.947-.525 0-.946-.422-.946-.947 0-.516.421-.947.946-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722h-2.222z"/></svg>
+      </a>
+    </nav>
+
+    <div class="hero-group">
+      <h1 class="hero-name">Noah Paladino</h1>
+      <p class="hero-role">PhD Candidate in Physics at MIT</p>
+    </div>
+
+    <div class="hero-group hero-group--affiliations">
+      <p class="affiliations-label">Affiliations</p>
+      <ul class="affiliations">
+        {{ range hugo.Data.affiliations }}
+        <li><a href="{{ .link }}" title="{{ .full }}">{{ .org }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+
+    <nav class="hero-nav" aria-label="Page sections">
+      <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
+      <a href="http://www.noahpaladino.com/blog">Blog</a>
+    </nav>
+  </header>
+
+  <section class="section section--paper" id="research">
+    <div class="wrap">
+      <span class="section-kicker">&sect; 01</span>
+      <h2 class="section-title">Research</h2>
+      <p class="section-blurb">{{ hugo.Data.research.blurb }}</p>
+
+      <div class="entries">
+        {{ range $entry := hugo.Data.research.entries }}
+        <article class="entry">
+          <div class="entry-meta">
+            <span class="entry-time">{{ $entry.timeline }}</span>
+          </div>
+          <div class="entry-body">
+            <h3 class="entry-title"><a href="{{ $entry.link }}">{{ $entry.title }}</a></h3>
+            <p class="entry-desc">{{ $entry.description }}</p>
+            <div class="entry-tags">
+              {{ range $entry.publications }}
+              <a href="{{ . }}">{{ path.Base . }}</a>
+              {{ end }}
+            </div>
+          </div>
+        </article>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--ink" id="projects">
+    <div class="wrap">
+      <span class="section-kicker">&sect; 02</span>
+      <h2 class="section-title">Projects</h2>
+      <p class="section-blurb">{{ hugo.Data.projects.blurb }}</p>
+
+      <div class="entries">
+        {{ range $entry := hugo.Data.projects.entries }}
+        <article class="entry">
+          <div class="entry-meta">
+            <span class="entry-time">{{ $entry.timeline }}</span>
+          </div>
+          <div class="entry-body">
+            <h3 class="entry-title"><a href="{{ $entry.link }}">{{ $entry.title }}</a></h3>
+            <p class="entry-desc">{{ $entry.description }}</p>
+            <div class="entry-tags">
+              {{ range $entry.extra_links }}
+              {{ $domain := replaceRE `^https?://` "" . }}
+              {{ $domain = index (split $domain "/") 0 }}
+              <a href="{{ . }}">{{ $domain }}</a>
+              {{ end }}
+            </div>
+          </div>
+        </article>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  {{ partial "footer.html" . }}
+
+  <script>
+    (function () {
+      var entries = document.querySelectorAll(".entry");
+      var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduceMotion || !("IntersectionObserver" in window)) {
+        entries.forEach(function (el) { el.classList.add("is-visible"); });
+        return;
+      }
+      var observer = new IntersectionObserver(function (observed) {
+        observed.forEach(function (item) {
+          if (item.isIntersecting) {
+            item.target.classList.add("is-visible");
+            observer.unobserve(item.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      entries.forEach(function (el) { observer.observe(el); });
+    })();
+  </script>
+</body>
+
+</html>
