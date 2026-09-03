@@ -2,6 +2,19 @@ blurb: >-
   My research interests are primarily aligned with experimental particle physics,
    with a focus on instrumentation for dark matter searches and specializing in data acquisition.
 entries:
+  - title: "KrIO: Standardized DAQ for Accelerated Science"
+    link: https://www.noahpaladino.com/krio/
+    timeline: 2024 - Present
+    publications: []
+    extra_links:
+      - url:  https://www.noahpaladino.com/krio
+        label: Website
+      - url: https://github.com/ngpaladi/krio
+        label: Source
+    description: >-
+      I developed the KrIO board and software framework to provide a standardized data acquisition platform for 
+      small-to-medium scale experiments. The board is hls4ml-ready and is designed to be compatible with a variety of 
+      sensors, by providing a standardized edge-connector for easy-to-design custom frontend boards.
   - title: Dark Sector Searches at SpinQuest
     link: https://spinquest.fnal.gov/
     timeline: 2021 - Present
@@ -12,17 +25,22 @@ entries:
       As a member of the SpinQuest collaboration, I focus on upgrading the detector for increased sensitivity
       to various dark sector portal searches, primarily dark photons. In addition, I manage the experiment's
       data acquisition system, and am currently working on an upgrade to allow for streaming data at 54MHz.
-
   - title: Machine Learning Inference as a Service for Science
-    link: https://indico.cern.ch/event/1387540/contributions/6153409/contribution.pdf
+    link: https://fastmachinelearning.org/SuperSONIC/
     timeline: 2024 - Present
     publications:
       - https://doi.org/10.48550/arXiv.2506.20657
+    extra_links:
+      - url: https://fastmachinelearning.org/SuperSONIC/
+        label: SuperSONIC
+      - url: https://www.noahpaladino.com/nereid-server
+        label: Nereid Inference Server
     description: >-
       Services for Optimized Network Inference on Coprocessors (SONIC) is a framework based on
       Nvidia's Triton that makes it easy for large scale scientific experiments (such as those at the Large Hadron Collider)
       to better use distributed heterogenous compute services for machine learning inference. My involvement primarily relates
-      to packaging and distribution for ease of deployment with current scientific software suites.
+      to packaging and distribution for ease of deployment with current scientific software suites, as well as teh creation of a 
+      new inference server, Nereid, that is designed to be more flexible and easier to deploy than Triton.
 
   - title: Vector Like Quark Searches at the Large Hadron Collider
     link: https://doi.org/10.1103/PhysRevD.110.052004
@@ -49,8 +67,12 @@ entries:
     link: http://www.physics.purdue.edu/research/reu/research_projects.html
     timeline: Summer 2019
     publications: []
+    extra_links:
+      - url: http://www.noahpaladino.com/py2700
+        label: py2700
     description: >-
       Through the REU Program in Physics at Purdue University, I worked with Professor Andreas Jung
       on hardware upgrades for the CMS detector at CERN. In particular, I focused on thermal conductivity
       testing for the carbon fiber mounting system for the forward pixel tracker. I also designed the
-      data acquisition and monitoring system for a testbench for the tracker's mixed-phase CO2 cooling system.
+      data acquisition and monitoring system for a testbench for the tracker's mixed-phase CO2 cooling system, 
+      releasing the py2700 software package to interface with the Keithley 2700-series multimeter.

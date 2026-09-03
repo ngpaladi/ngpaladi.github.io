@@ -21,7 +21,7 @@ Outputs the static site to `public/`.
 ## Structure
 
 - `hugo.toml` — site config (title, baseURL, params)
-- `data/` — research and projects entries rendered on the homepage
+- `data/` — research, projects, and service entries rendered on the homepage
 - `layouts/` — page templates (`index.html`, `404.html`) and `layouts/partials/`
 - `static/` — assets served as-is (images, CSS, fonts, PDF, favicon, `CNAME`)
 

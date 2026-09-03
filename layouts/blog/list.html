@@ -6,7 +6,8 @@
       <a class="wordmark" href="{{ "/" | relURL }}">Noah Paladino</a>
       <nav class="hero-nav" aria-label="Page sections">
         <a href="{{ "/#research" | relURL }}">Research</a>
-        <a href="{{ "/#projects" | relURL }}">Projects</a>
+        {{ with hugo.Data.projects.entries }}<a href="{{ "/#projects" | relURL }}">Projects</a>{{ end }}
+        <a href="{{ "/#service" | relURL }}">Service</a>
         <a href="{{ "/blog/" | relURL }}">Blog</a>
       </nav>
     </div>

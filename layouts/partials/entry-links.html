@@ -1,0 +1,32 @@
+{{/* Renders an entry's extra_links as chips.
+
+     Each item is either a bare URL string, labeled with its domain:
+
+       extra_links:
+         - https://github.com/ngpaladi/thing
+
+     or a map with an explicit label:
+
+       extra_links:
+         - url: https://example.com
+           label: Website
+         - url: https://github.com/ngpaladi/thing
+           label: Source
+
+     The two forms can be mixed within one entry. A map without a label
+     falls back to the domain, same as the string form. */}}
+{{ range . }}
+{{ $url := "" }}
+{{ $label := "" }}
+{{ if reflect.IsMap . }}
+{{ $url = .url }}
+{{ $label = .label }}
+{{ else }}
+{{ $url = . }}
+{{ end }}
+{{ if not $label }}
+{{ $domain := replaceRE `^https?://` "" $url }}
+{{ $label = index (split $domain "/") 0 }}
+{{ end }}
+<a href="{{ $url }}">{{ $label }}</a>
+{{ end }}

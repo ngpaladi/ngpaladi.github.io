@@ -13,6 +13,11 @@
   --accent: #28429e;
   --accent-bright: #7194f7;
 
+  /* Publications are the quiet chip: raised ink, so the accent stays the
+     only saturated color on the page. */
+  --chip-cite: #2b3242;
+  --chip-cite-hover: #3d475c;
+
   --text-on-ink: #d9d4c5;
   --text-on-ink-muted: #8a8d99;
   --text-on-paper: #201d18;
@@ -39,6 +44,9 @@ html.alt-mode {
 
   --accent: #b8551c;
   --accent-bright: #d4691f;
+
+  --chip-cite: #2c4a34;
+  --chip-cite-hover: #3d6146;
 
   --text-on-ink: #f5efd9;
   --text-on-ink-muted: #a8c9b0;
@@ -420,6 +428,17 @@ img {
   border-color: var(--rule-on-ink);
 }
 
+/* Projects carry no timeline, so the entry gives up its metadata column
+   and the description runs the full width rather than holding the
+   reading measure the dated sections use. */
+.entry--plain {
+  grid-template-columns: 1fr;
+}
+
+.entry--plain .entry-desc {
+  max-width: none;
+}
+
 .entry:first-child {
   border-top: none;
   padding-top: 0;
@@ -496,6 +515,14 @@ img {
 
 .entry-tags a:hover {
   background: var(--accent-bright);
+}
+
+.entry-tags a.publication {
+  background: var(--chip-cite);
+}
+
+.entry-tags a.publication:hover {
+  background: var(--chip-cite-hover);
 }
 
 @media (max-width: 640px) {

@@ -40,14 +40,18 @@
 
     <nav class="hero-nav" aria-label="Page sections">
       <a href="#research">Research</a>
-      <a href="#projects">Projects</a>
+      {{ with hugo.Data.projects.entries }}<a href="#projects">Projects</a>{{ end }}
+      <a href="#service">Service</a>
       <a href="{{ "/blog/" | relURL }}">Blog</a>
     </nav>
   </header>
 
-  <section class="section section--paper" id="research">
+  {{ $n := 0 }}
+
+  {{ $n = add $n 1 }}
+  <section class="section {{ if eq (mod $n 2) 1 }}section--paper{{ else }}section--ink{{ end }}" id="research">
     <div class="wrap">
-      <span class="section-kicker">&sect; 01</span>
+      <span class="section-kicker">&sect; {{ printf "%02d" $n }}</span>
       <h2 class="section-title">Research</h2>
       <p class="section-blurb">{{ hugo.Data.research.blurb }}</p>
 
@@ -61,8 +65,10 @@
             <h3 class="entry-title"><a href="{{ $entry.link }}">{{ $entry.title }}</a></h3>
             <p class="entry-desc">{{ $entry.description }}</p>
             <div class="entry-tags">
+              {{ partial "entry-links.html" $entry.extra_links }}
               {{ range $entry.publications }}
-              <a href="{{ . }}">{{ path.Base . }}</a>
+              {{/* A DOI is labeled with its suffix ("PhysRevD.110.052004"); anything else is just a link out. */}}
+              <a class="publication" href="{{ . }}">{{ if strings.Contains . "doi.org/" }}{{ path.Base . }}{{ else }}Website{{ end }}</a>
               {{ end }}
             </div>
           </div>
@@ -72,14 +78,40 @@
     </div>
   </section>
 
-  <section class="section section--ink" id="projects">
+  {{ with hugo.Data.projects.entries }}
+  {{ $n = add $n 1 }}
+  <section class="section {{ if eq (mod $n 2) 1 }}section--paper{{ else }}section--ink{{ end }}" id="projects">
     <div class="wrap">
-      <span class="section-kicker">&sect; 02</span>
+      <span class="section-kicker">&sect; {{ printf "%02d" $n }}</span>
       <h2 class="section-title">Projects</h2>
       <p class="section-blurb">{{ hugo.Data.projects.blurb }}</p>
 
       <div class="entries">
-        {{ range $entry := hugo.Data.projects.entries }}
+        {{ range $entry := . }}
+        <article class="entry entry--plain">
+          <div class="entry-body">
+            <h3 class="entry-title"><a href="{{ $entry.link }}">{{ $entry.title }}</a></h3>
+            <p class="entry-desc">{{ $entry.description }}</p>
+            <div class="entry-tags">
+              {{ partial "entry-links.html" $entry.extra_links }}
+            </div>
+          </div>
+        </article>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ $n = add $n 1 }}
+  <section class="section {{ if eq (mod $n 2) 1 }}section--paper{{ else }}section--ink{{ end }}" id="service">
+    <div class="wrap">
+      <span class="section-kicker">&sect; {{ printf "%02d" $n }}</span>
+      <h2 class="section-title">Service</h2>
+      <p class="section-blurb">{{ hugo.Data.service.blurb }}</p>
+
+      <div class="entries">
+        {{ range $entry := hugo.Data.service.entries }}
         <article class="entry">
           <div class="entry-meta">
             <span class="entry-time">{{ $entry.timeline }}</span>
@@ -88,11 +120,7 @@
             <h3 class="entry-title"><a href="{{ $entry.link }}">{{ $entry.title }}</a></h3>
             <p class="entry-desc">{{ $entry.description }}</p>
             <div class="entry-tags">
-              {{ range $entry.extra_links }}
-              {{ $domain := replaceRE `^https?://` "" . }}
-              {{ $domain = index (split $domain "/") 0 }}
-              <a href="{{ . }}">{{ $domain }}</a>
-              {{ end }}
+              {{ partial "entry-links.html" $entry.extra_links }}
             </div>
           </div>
         </article>
@@ -102,9 +130,10 @@
   </section>
 
   {{ $blog := site.GetPage "blog" }}
-  <section class="section section--paper" id="blog">
+  {{ $n = add $n 1 }}
+  <section class="section {{ if eq (mod $n 2) 1 }}section--paper{{ else }}section--ink{{ end }}" id="blog">
     <div class="wrap">
-      <span class="section-kicker">&sect; 03</span>
+      <span class="section-kicker">&sect; {{ printf "%02d" $n }}</span>
       <h2 class="section-title">Blog</h2>
       <p class="section-blurb">{{ $blog.Params.blurb }}</p>
 
