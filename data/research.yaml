@@ -33,7 +33,7 @@ entries:
     extra_links:
       - url: https://fastmachinelearning.org/SuperSONIC/
         label: SuperSONIC
-      - url: https://www.noahpaladino.com/nereid-server
+      - url: https://www.noahpaladino.com/nereid-server/
         label: Nereid Inference Server
     description: >-
       Services for Optimized Network Inference on Coprocessors (SONIC) is a framework based on
@@ -68,7 +68,7 @@ entries:
     timeline: Summer 2019
     publications: []
     extra_links:
-      - url: http://www.noahpaladino.com/py2700
+      - url: https://www.noahpaladino.com/py2700/
         label: py2700
     description: >-
       Through the REU Program in Physics at Purdue University, I worked with Professor Andreas Jung
