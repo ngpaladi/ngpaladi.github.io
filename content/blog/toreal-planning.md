@@ -1,7 +1,7 @@
 ---
 title: "TOREAL: My First Bike Trip Planning & Packing"
 date: 2026-10-01T19:00:00+05:30
-description: "Planning and executing mine and my partner's first bike tour: a ride from Toronto to Montreal, in all its glory and chaos."
+description: "Planning and executing my partner's and my first bike tour: a ride from Toronto to Montreal, in all its glory and chaos."
 math: true
 url: /blog/toreal/planning.html
 ---
@@ -17,7 +17,7 @@ Our initial route called for us to ride 112.9 miles from the outskirts of Toront
 # The Bike Setup
 We had planned on inline bike bags to cut down on drag, so I would be fitting my Litespeed Flint with a frame bag, top tube bag, handlebar bag, and tailbag. Meanwhile, Jody would fit her Canyon Endurace with a tailbag, top tube bag, and handlebar bag, while carrying our water bottles. This seemed like an ideal setup to take advantage of my larger frame triangle and split the load between the two of us. 
 
-However, we soon realized that as busy grad students tied to their research, we would have to at least bring one laptop and one tablet with us to get work done. Unfortunately, Jody's 16 inch Macbook couldn't fit in any of our bags, so while staying in Toronto with just a few days left until departure, it was back to the drawing board. We considered many options, but the only way we could cram in Jody's laptop without risk of something breaking was to spring for a rack and panniers. We chose an Axiom rear rack to allow us to shift the bags further back and out of the way of my heels when pedaling. This meant we decided against running the handlebar bag on my bike, which as a user of narrow bars as well as a long and low stem, I greatly appreciated.
+However, we soon realized that as busy grad students tied to their research, we would have to at least bring one laptop and one tablet with us to get work done. Unfortunately, Jody's 16 inch MacBook couldn't fit in any of our bags, so while staying in Toronto with just a few days left until departure, it was back to the drawing board. We considered many options, but the only way we could cram in Jody's laptop without risk of something breaking was to spring for a rack and panniers. We chose an Axiom rear rack to allow us to shift the bags further back and out of the way of my heels when pedaling. This meant we decided against running the handlebar bag on my bike, which as a user of narrow bars as well as a long and low stem, I greatly appreciated.
 
 ![My Litespeed Flint, loaded with a frame bag, top tube bag, and the rear rack and panniers that replaced the handlebar bag](/blog/assets/posts/toreal/IMG_3257.jpg)
 

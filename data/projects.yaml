@@ -1,16 +1,5 @@
 blurb: A selection of technical projects I have built outside of my research.
 entries: 
-  - title: "MakePoster"
-    link: "https://www.noahpaladino.com/MakePoster/"
-    extra_links:
-      - url: "https://www.noahpaladino.com/MakePoster/"
-        label: Try It
-      - url: "https://github.com/ngpaladi/MakePoster"
-        label: Source
-    description: >-
-      MakePoster is a web application that allows users to create and customize scientific
-      conference posters. It runs entirely in the user's browser and provides a user-friendly 
-      interface designed to replace slideshow software for poster creation and presentation.
   - title: "Phidler"
     link: "https://www.noahpaladino.com/phidler/"
     extra_links:
@@ -25,7 +14,7 @@ entries:
       instead of generating GDS files directly, it generates a GDSFactory-based Python script that can be run 
       to generate the GDS file, allowing for easy integration with other software and workflows. It also includes 
       a command-line interface (CLI) for advanced users who prefer to work in a terminal environment, as well as
-      a Claude code integration (synchronized with the aoftware undo/redo stack) to streamline creation of more complex 
+      a Claude code integration (synchronized with the software undo/redo stack) to streamline creation of more complex 
       circuits.
   - title: "MoveMyBikeFit"
     link: "https://www.noahpaladino.com/MoveMyBikeFit/"
@@ -40,6 +29,18 @@ entries:
       for my new bike and, as a visual person, I wanted to see how different brands compared. While other 
       tools exist, none allowed me to look at seat setback and stem/handlebar reach. The application 
       includes a variety of recent dropbar bike frames and allows users to add their own frames via pull request.
+  - title: "MakePoster"
+    link: "https://www.noahpaladino.com/MakePoster/"
+    extra_links:
+      - url: "https://www.noahpaladino.com/MakePoster/"
+        label: Try It
+      - url: "https://github.com/ngpaladi/MakePoster"
+        label: Source
+    description: >-
+      MakePoster is a web application that allows users to create and customize scientific
+      conference posters. It runs entirely in the user's browser and provides a user-friendly 
+      interface designed to replace slideshow software for poster creation and presentation.
+  
   - title: "CritLab"
     link: "https://www.noahpaladino.com/CritLab/"
     extra_links:

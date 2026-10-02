@@ -38,7 +38,7 @@ entries:
     description: >-
       Services for Optimized Network Inference on Coprocessors (SONIC) is a framework based on
       Nvidia's Triton that makes it easy for large scale scientific experiments (such as those at the Large Hadron Collider)
-      to better use distributed heterogenous compute services for machine learning inference. My involvement primarily relates
+      to better use distributed heterogeneous compute services for machine learning inference. My involvement primarily relates
       to packaging and distribution for ease of deployment with current scientific software suites, as well as the creation of a 
       new inference server, Nereid, that is designed to be more flexible and easier to deploy than Triton.
 
