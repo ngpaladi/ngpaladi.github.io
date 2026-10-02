@@ -14,11 +14,11 @@ After preliminary tests at home games against the Universities of Illinois and M
 The results for the entire game, a heatmap of the loudest areas overlaid onto a rough diagram of the RAC, is displayed below, followed by diagrams for the first and second half individually.
 
 
-![image-total](/blog/assets/posts/2020-05-28-RAC/total_with_backdrop_hot_r.png)
+![Peak decibel levels across the entire game, overlaid on a diagram of the RAC](/blog/assets/posts/2020-05-28-RAC/total_with_backdrop_hot_r.png)
 
-![image-1st-half](/blog/assets/posts/2020-05-28-RAC/first_half_with_backdrop_hot_r.png)
+![Peak decibel levels during the first half](/blog/assets/posts/2020-05-28-RAC/first_half_with_backdrop_hot_r.png)
 
-![image-2nd-half](/blog/assets/posts/2020-05-28-RAC/second_half_with_backdrop_hot_r.png)
+![Peak decibel levels during the second half](/blog/assets/posts/2020-05-28-RAC/second_half_with_backdrop_hot_r.png)
 
 
 One of the most noticeable things in these diagrams for someone who has attended a game at the RAC is the sheer loudness of the band. Located close to the court at the rightmost edge of the student section (the area at the top of the diagram), it produced some of the loudest readings overall. The compact nature of the RAC that forces the band to be so close really helps drive the atmosphere provided by the thousands of fans packing the stands. 

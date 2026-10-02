@@ -38,7 +38,7 @@ def time_to_drive(distance):
 
 Now with the help of Matplotlib, we can plot this function. Let’s compare it to a given file transfer over an average internet connection, which we can take as constant with respect to distance, but varying with respect to size (the time it takes to send the signal from you to your cousins is probably less than a second, and more likely than not under something like 300 ms). We will assume you have to upload to a cloud service, like Google Drive or Dropbox first (at the average American upload speed of around 50 Mb/s, according to Speedtest.net), then download at the aforementioned 140 Gb/s.
 
-![plot](/blog/assets/posts/2020-06-30-transfer/Figure_1.png)
+![Transfer time versus distance: driving the file compared with uploading and downloading it over an average American connection](/blog/assets/posts/2020-06-30-transfer/Figure_1.png)
 
 So this is pretty clear evidence that if you need to send 100 GB of data to someone 350 miles away, it's actually faster to drive it than to send it over the internet via a cloud storage service. Once we get to the order of a few terabytes, local mail and shipping companies even become viable. So there you have it: once you have to send your cousin a terabyte's worth of home movies across state lines, just mail it.
 

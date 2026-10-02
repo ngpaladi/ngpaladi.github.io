@@ -26,3 +26,6 @@ disableKinds = ["taxonomy", "term"]
   [markup.goldmark.extensions.passthrough.delimiters]
     block = [["\\[", "\\]"]]
     inline = [["\\(", "\\)"]]
+
+[markup.goldmark.parser]
+  wrapStandAloneImageWithinParagraph = false

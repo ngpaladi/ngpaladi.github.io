@@ -1,0 +1,24 @@
+{{- /* Images on their own line become a captioned <figure>; the caption is the
+       alt text, or the optional markdown title if one is given:
+
+         ![alt doubling as the caption](/path/img.jpg)
+         ![descriptive alt](/path/img.jpg "A different caption")
+
+       Inline images (mid-sentence) stay bare <img>. Requires
+       markup.goldmark.parser.wrapStandAloneImageWithinParagraph = false,
+       which is what makes .IsBlock meaningful. */ -}}
+{{- $titleAttr := "" -}}
+{{- with .Title -}}
+  {{- $titleAttr = printf " title=%q" . -}}
+{{- end -}}
+{{- $img := printf "<img src=%q alt=%q%s>" .Destination .PlainText $titleAttr | safeHTML -}}
+{{- if .IsBlock -}}
+<figure>
+  {{ $img }}
+  {{- with or .Title .Text }}
+  <figcaption>{{ . | safeHTML }}</figcaption>
+  {{- end }}
+</figure>
+{{- else -}}
+{{- $img -}}
+{{- end -}}

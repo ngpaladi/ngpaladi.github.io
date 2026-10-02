@@ -719,6 +719,24 @@ html.alt-mode .mode-toggle:hover {
   border: 1px solid var(--rule-on-paper);
 }
 
+/* Captioned images: the figure owns the vertical rhythm so the caption sits
+   tight under its image rather than a paragraph's gap away. */
+.post-content figure {
+  margin: 1.75rem 0;
+}
+
+.post-content figure img {
+  margin: 0;
+}
+
+.post-content figcaption {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--text-on-paper-muted);
+  margin-top: 0.6rem;
+}
+
 /* Strava embeds: embed.js swaps the placeholder for an iframe with an inline
    width -- 100% for route embeds sent with data-full-width, a hard-coded 554px
    for everything else -- so force the fill here too. Height stays Strava's. */
