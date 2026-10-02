@@ -24,6 +24,8 @@
     </div>
   </article>
 
+  {{ if .HasShortcode "strava" }}<script src="https://strava-embeds.com/embed.js"></script>{{ end }}
+
   {{ partial "footer.html" . }}
 </body>
 

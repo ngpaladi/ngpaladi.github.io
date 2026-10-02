@@ -719,6 +719,20 @@ html.alt-mode .mode-toggle:hover {
   border: 1px solid var(--rule-on-paper);
 }
 
+/* Strava embeds: embed.js swaps the placeholder for an iframe with an inline
+   width -- 100% for route embeds sent with data-full-width, a hard-coded 554px
+   for everything else -- so force the fill here too. Height stays Strava's. */
+.strava-embed {
+  margin: 1.75rem 0;
+}
+
+.strava-embed iframe {
+  display: block;
+  width: 100% !important;
+  max-width: 100%;
+  border: 0;
+}
+
 .post-content blockquote {
   margin: 1.5rem 0;
   padding-left: 1.25rem;

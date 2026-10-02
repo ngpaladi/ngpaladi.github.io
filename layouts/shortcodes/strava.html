@@ -1,0 +1,27 @@
+{{- /* Strava embed. Pull the values from the data-* attributes in Strava's
+       "Embed on your site" snippet:
+
+         {{< strava id="3540899490391166762" token="vN2SZw_..." map-hash="5.85/44.632/-76.384" >}}
+
+       Defaults to full width: embed.js otherwise hard-codes the iframe to
+       554px. It only honours data-full-width for route embeds, so the CSS in
+       style.css force-widens the iframe for the other types.
+
+       embed.js is loaded once per page by layouts/blog/single.html, which
+       checks .HasShortcode "strava". */ -}}
+{{- /* Not .Get | default: Hugo's default treats an unquoted false as unset. */ -}}
+{{- $fullWidth := "true" -}}
+{{- if isset .Params "full-width" -}}
+  {{- $fullWidth = cond (eq (printf "%v" (.Get "full-width")) "false") "false" "true" -}}
+{{- end -}}
+{{- $id := .Get "id" -}}
+{{- if not $id -}}
+  {{- errorf "shortcode %q in %s: missing required parameter %q" .Name .Page.Path "id" -}}
+{{- end -}}
+<div class="strava-embed">
+  <div class="strava-embed-placeholder" data-embed-type="{{ .Get "type" | default "route" }}"
+    data-embed-id="{{ $id }}" data-style="{{ .Get "style" | default "standard" }}"
+    {{ with .Get "map-hash" }}data-map-hash="{{ . }}" {{ end }}data-from-embed="true"
+    data-full-width="{{ $fullWidth }}"
+    {{ with .Get "token" }}data-token="{{ . }}"{{ end }}></div>
+</div>
